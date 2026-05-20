@@ -11,9 +11,9 @@ interface FloatingPetalsProps {
 type PetalVariant = 0 | 1 | 2;
 
 const VARIANT_COLORS: Record<PetalVariant, { from: string; mid: string; to: string }> = {
-  0: { from: '#FFE3EC', mid: '#F4B6CD', to: '#B83A5E' }, // blush rose
-  1: { from: '#FFFFFF', mid: '#FBD7E3', to: '#E89BB5' }, // white petal
-  2: { from: '#FCE4EC', mid: '#E89BB5', to: '#8B2447' }, // deep rose
+  0: { from: '#FFF8EE', mid: '#E8D5B0', to: '#C9A96E' }, // champagne gold petal
+  1: { from: '#FFFCF6', mid: '#F2E2C8', to: '#D4B896' }, // cream petal
+  2: { from: '#F9EAE1', mid: '#D4B896', to: '#8B5E3C' }, // dusty rose → wood brown
 };
 
 function PetalSVG({ variant, gradId }: { variant: PetalVariant; gradId: string }) {
@@ -32,7 +32,7 @@ function PetalSVG({ variant, gradId }: { variant: PetalVariant; gradId: string }
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
       className="w-full h-full block"
-      style={{ filter: 'drop-shadow(0 2px 3px rgba(139, 36, 71, 0.18))' }}
+      style={{ filter: 'drop-shadow(0 2px 3px rgba(74, 47, 26, 0.20))' }}
     >
       <defs>
         <radialGradient id={`${gradId}-fill`} cx="50%" cy="30%" r="80%">
@@ -41,8 +41,8 @@ function PetalSVG({ variant, gradId }: { variant: PetalVariant; gradId: string }
           <stop offset="100%" stopColor={c.to} stopOpacity="0.85" />
         </radialGradient>
         <linearGradient id={`${gradId}-vein`} x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#8B2447" stopOpacity="0.15" />
+          <stop offset="0%" stopColor="#FFFCF6" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#4A2F1A" stopOpacity="0.15" />
         </linearGradient>
       </defs>
       <path d={path} fill={`url(#${gradId}-fill)`} />
@@ -57,8 +57,8 @@ function PetalSVG({ variant, gradId }: { variant: PetalVariant; gradId: string }
       {/* Soft highlight */}
       <path
         d="M13 7 Q 11 14, 13 22"
-        stroke="#FFFFFF"
-        strokeOpacity="0.35"
+        stroke="#FFFCF6"
+        strokeOpacity="0.40"
         strokeWidth="0.7"
         fill="none"
         strokeLinecap="round"

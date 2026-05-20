@@ -134,8 +134,8 @@ function TimelineNode({ icon }: { icon: string }) {
   return (
     <div className="flex-shrink-0 z-10 relative flex flex-col items-center">
       <div
-        className="w-12 h-12 rounded-full bg-white border-2 border-primary/40
-                   shadow-[0_0_0_6px_rgba(192,104,136,0.08)]
+        className="w-12 h-12 rounded-full bg-card border-2 border-primary/40
+                   shadow-[0_0_0_6px_rgba(139,94,60,0.10)]
                    flex items-center justify-center
                    transition-transform duration-300 hover:scale-110"
       >

@@ -4,14 +4,14 @@ import { Heart } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="relative w-full py-10 px-4 text-white overflow-hidden">
-      {/* Majestic gradient backdrop */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#8B2447] via-primary to-[#6B1B36]"></div>
+    <footer className="relative w-full py-10 px-4 text-[#FFF8EE] overflow-hidden">
+      {/* Deep chocolate backdrop — Beautiful Chapter section */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#4A2F1A] via-[#6B3D2E] to-[#3A2418]"></div>
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-35"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 20% 20%, rgba(201,169,106,0.25) 0px, transparent 40%), radial-gradient(circle at 80% 80%, rgba(244,194,215,0.2) 0px, transparent 40%)',
+            'radial-gradient(circle at 20% 20%, rgba(201,169,110,0.30) 0px, transparent 45%), radial-gradient(circle at 80% 80%, rgba(232,213,176,0.20) 0px, transparent 45%)',
         }}
       ></div>
 

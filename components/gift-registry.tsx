@@ -49,42 +49,42 @@ export function GiftRegistry() {
               <div className="relative w-56 h-56 md:w-64 md:h-64 transition-all duration-500
                               group-hover:scale-105 group-hover:-translate-y-1
                               animate-float">
-                {/* Bottom of box */}
+                {/* Bottom of box — wood brown */}
                 <div className="absolute bottom-0 inset-x-0 h-3/4 rounded-2xl
-                                bg-gradient-to-br from-primary via-[#8B2447] to-primary
-                                shadow-[0_20px_50px_-10px_rgba(184,58,94,0.55)]
-                                border border-primary/40">
-                  {/* Vertical gold ribbon */}
+                                bg-gradient-to-br from-[#8B5E3C] via-[#4A2F1A] to-[#8B5E3C]
+                                shadow-[0_20px_50px_-10px_rgba(74,47,26,0.55)]
+                                border border-[#6B3D2E]/50">
+                  {/* Vertical champagne ribbon */}
                   <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-8
-                                  bg-gradient-to-b from-[#E8C97A] via-[#FFF6D6] to-[#C9962E]
+                                  bg-gradient-to-b from-[#E8D5B0] via-[#FFF6D6] to-[#C9A96E]
                                   shadow-lg" />
                 </div>
 
-                {/* Lid */}
+                {/* Lid — dark chocolate */}
                 <div className="absolute top-0 inset-x-0 h-1/4 rounded-xl
-                                bg-gradient-to-br from-[#8B2447] via-primary to-[#8B2447]
-                                shadow-[0_6px_18px_rgba(184,58,94,0.4)]
-                                border border-primary/40
+                                bg-gradient-to-br from-[#4A2F1A] via-[#6B3D2E] to-[#4A2F1A]
+                                shadow-[0_6px_18px_rgba(74,47,26,0.45)]
+                                border border-[#6B3D2E]/50
                                 transition-all duration-500
                                 group-hover:-translate-y-1 group-hover:rotate-[-1deg]" />
 
-                {/* Horizontal gold ribbon on lid */}
+                {/* Horizontal champagne ribbon on lid */}
                 <div className="absolute top-0 left-0 right-0 h-1/4 flex items-center pointer-events-none">
-                  <div className="w-full h-3 bg-gradient-to-r from-[#C9962E] via-[#FFF6D6] to-[#C9962E] shadow" />
+                  <div className="w-full h-3 bg-gradient-to-r from-[#C9A96E] via-[#FFF6D6] to-[#C9A96E] shadow" />
                 </div>
 
-                {/* Bow */}
+                {/* Bow — gold */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2
                                 w-16 h-12 flex items-center justify-center
                                 transition-transform duration-500 group-hover:rotate-6">
                   <div className="absolute left-0 w-7 h-9 rounded-full
-                                  bg-gradient-to-br from-[#E8C97A] via-[#F3D88E] to-[#A87830]
+                                  bg-gradient-to-br from-[#E8D5B0] via-[#D4B896] to-[#A8854B]
                                   shadow-md rotate-[-20deg]" />
                   <div className="absolute right-0 w-7 h-9 rounded-full
-                                  bg-gradient-to-bl from-[#E8C97A] via-[#F3D88E] to-[#A87830]
+                                  bg-gradient-to-bl from-[#E8D5B0] via-[#D4B896] to-[#A8854B]
                                   shadow-md rotate-[20deg]" />
                   <div className="relative z-10 w-4 h-4 rounded-full
-                                  bg-gradient-to-br from-[#FFF6D6] to-[#C9962E] shadow-inner" />
+                                  bg-gradient-to-br from-[#FFF6D6] to-[#C9A96E] shadow-inner" />
                 </div>
 
                 {/* Sparkles */}
@@ -97,7 +97,7 @@ export function GiftRegistry() {
 
                 {/* Icon hint */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <Gift className="w-10 h-10 text-white/80 drop-shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Gift className="w-10 h-10 text-[#FFF8EE]/85 drop-shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
             </button>

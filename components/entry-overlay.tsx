@@ -41,7 +41,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
       onClick={enter}
       className="fixed inset-0 z-[200] flex flex-col items-center justify-center cursor-pointer select-none overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #2A0912 0%, #8B2447 40%, #6B1B36 72%, #1E0610 100%)',
+        background: 'linear-gradient(160deg, #1E120A 0%, #4A2F1A 38%, #6B3D2E 72%, #150D08 100%)',
         opacity: fading ? 0 : 1,
         transition: 'opacity 0.9s ease',
         pointerEvents: fading ? 'none' : 'auto',
@@ -52,23 +52,23 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 70% 55% at 50% 48%, rgba(192,104,136,0.22) 0%, transparent 65%)',
+            'radial-gradient(ellipse 70% 55% at 50% 48%, rgba(201,169,110,0.20) 0%, transparent 65%)',
         }}
       />
 
       {/* Corner frame */}
       <div className="absolute inset-6 md:inset-10 pointer-events-none">
-        <span className="absolute top-0 left-0 w-10 h-10 border-t border-l border-[#C4A87A]/40" />
-        <span className="absolute top-0 right-0 w-10 h-10 border-t border-r border-[#C4A87A]/40" />
-        <span className="absolute bottom-0 left-0 w-10 h-10 border-b border-l border-[#C4A87A]/40" />
-        <span className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-[#C4A87A]/40" />
+        <span className="absolute top-0 left-0 w-10 h-10 border-t border-l border-[#D4B896]/40" />
+        <span className="absolute top-0 right-0 w-10 h-10 border-t border-r border-[#D4B896]/40" />
+        <span className="absolute bottom-0 left-0 w-10 h-10 border-b border-l border-[#D4B896]/40" />
+        <span className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-[#D4B896]/40" />
       </div>
 
       {/* Sparkles */}
       {SPARKLES.map((s, i) => (
         <span
           key={i}
-          className="absolute text-[#C4A87A] animate-sparkle pointer-events-none"
+          className="absolute text-[#D4B896] animate-sparkle pointer-events-none"
           style={s}
         >
           ✦
@@ -80,13 +80,13 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
 
         {/* Top ornament */}
         <div className="flex items-center justify-center gap-3 mb-5">
-          <span className="h-px w-10 bg-[#C4A87A]/50" />
-          <span className="text-[#C4A87A] text-xl">❦</span>
-          <span className="h-px w-10 bg-[#C4A87A]/50" />
+          <span className="h-px w-10 bg-[#D4B896]/50" />
+          <span className="text-[#D4B896] text-xl">❦</span>
+          <span className="h-px w-10 bg-[#D4B896]/50" />
         </div>
 
         {/* "Trân trọng kính mời" label */}
-        <p className="font-luxe text-[#C4A87A]/80 text-[12px] tracking-[0.35em] mb-4">
+        <p className="font-luxe text-[#D4B896]/80 text-[12px] tracking-[0.35em] mb-4">
           TRÂN TRỌNG KÍNH MỜI
         </p>
 
@@ -110,7 +110,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
         {/* Divider */}
         <div className="flex items-center justify-center gap-3 my-5">
           <span className="h-px w-8 bg-white/25" />
-          <span className="text-[#C4A87A]/60 text-sm">✦</span>
+          <span className="text-[#D4B896]/60 text-sm">✦</span>
           <span className="h-px w-8 bg-white/25" />
         </div>
 
@@ -128,7 +128,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
         </h1>
         <div className="flex items-center justify-center gap-4 my-2">
           <span className="h-px w-6 bg-white/20" />
-          <span className="font-script text-[#C4A87A] text-2xl">&amp;</span>
+          <span className="font-script text-[#D4B896] text-2xl">&amp;</span>
           <span className="h-px w-6 bg-white/20" />
         </div>
         <h1
@@ -145,9 +145,9 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
 
         {/* Bottom ornament */}
         <div className="flex items-center justify-center gap-3 mb-6">
-          <span className="h-px w-10 bg-[#C4A87A]/40" />
-          <span className="text-[#C4A87A]/60">❦</span>
-          <span className="h-px w-10 bg-[#C4A87A]/40" />
+          <span className="h-px w-10 bg-[#D4B896]/40" />
+          <span className="text-[#D4B896]/60">❦</span>
+          <span className="h-px w-10 bg-[#D4B896]/40" />
         </div>
 
         {/* Enter prompt */}
@@ -155,7 +155,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
           <p className="font-luxe text-white/45 text-[13px] tracking-[0.4em]">
             NHẤN ĐỂ VÀO XEM THIỆP MỜI
           </p>
-          <span className="text-[#C4A87A]/55 text-lg mt-0.5">↓</span>
+          <span className="text-[#D4B896]/55 text-lg mt-0.5">↓</span>
         </div>
       </div>
     </div>

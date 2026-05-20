@@ -96,7 +96,7 @@ export function MapSection() {
                 href={VENUE.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full px-4 py-3 bg-gradient-to-r from-primary via-[#8B2447] to-primary bg-[length:200%_auto] hover:bg-right text-white text-center font-luxe text-xs rounded-full transition-all duration-500 shadow-lg hover:shadow-xl"
+                className="block w-full px-4 py-3 bg-gradient-to-r from-primary via-[#6B3D2E] to-primary bg-[length:200%_auto] hover:bg-right text-primary-foreground text-center font-luxe text-xs rounded-full transition-all duration-500 shadow-lg hover:shadow-xl"
               >
                 Mở Google Maps
               </a>

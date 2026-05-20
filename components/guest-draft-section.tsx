@@ -183,8 +183,8 @@ export function GuestDraftSection() {
             <button
               onClick={handleSave}
               disabled={!name.trim() || saving}
-              className="md:self-end px-8 py-3 rounded-full font-luxe text-xs text-white shadow-lg
-                         bg-gradient-to-r from-primary via-[#8B2447] to-primary
+              className="md:self-end px-8 py-3 rounded-full font-luxe text-xs text-primary-foreground shadow-lg
+                         bg-gradient-to-r from-primary via-[#6B3D2E] to-primary
                          bg-[length:200%_auto] hover:bg-right transition-all duration-500
                          disabled:opacity-40 disabled:cursor-not-allowed
                          flex items-center justify-center gap-2 whitespace-nowrap"
@@ -292,7 +292,7 @@ export function GuestDraftSection() {
         <div
           role="status"
           className="fixed left-1/2 -translate-x-1/2 bottom-8 z-50
-                     bg-primary text-white rounded-full px-5 py-2
+                     bg-primary text-primary-foreground rounded-full px-5 py-2
                      font-luxe text-[13px] shadow-xl animate-fade-in-up"
         >
           {toast}

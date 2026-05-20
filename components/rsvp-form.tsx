@@ -222,7 +222,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
           <span className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/20 pointer-events-none" />
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
+              <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                 Họ và tên <span className="text-primary">*</span>
               </label>
               <Input
@@ -232,35 +232,40 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                 onChange={handleChange}
                 placeholder="Nhập họ và tên của bạn"
                 required
-                className="rounded-lg border-secondary/30 focus:border-primary focus:ring-primary/20"
+                className="rounded-lg border-border focus:border-primary focus:ring-primary/20 text-base py-5"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
+              <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                 Số điện thoại <span className="text-primary">*</span>
               </label>
               <Input
                 type="tel"
+                inputMode="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Nhập số điện thoại của bạn"
+                placeholder="Ví dụ: 0987 654 321"
                 required
-                className="rounded-lg border-secondary/30 focus:border-primary focus:ring-primary/20"
+                className="rounded-lg border-border focus:border-primary focus:ring-primary/20
+                           text-lg md:text-xl font-display font-medium tracking-wider py-5"
               />
+              <p className="mt-1.5 text-xs text-muted-foreground italic">
+                Để chúng tôi tiện liên hệ khi có thay đổi lịch trình
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">
+                <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                   Số lượng người tham dự <span className="text-primary">*</span>
                 </label>
                 <select
                   name="numberOfGuests"
                   value={formData.numberOfGuests}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg border border-secondary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 text-foreground"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 text-foreground font-serif-elegant"
                 >
                   {[1, 2, 3, 4, 5].map((num) => (
                     <option key={num} value={num}>
@@ -271,14 +276,14 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">
+                <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                   Khách của <span className="text-primary">*</span>
                 </label>
                 <select
                   name="guestType"
                   value={formData.guestType}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg border border-secondary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 text-foreground"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 text-foreground font-serif-elegant"
                 >
                   <option value="groom-family">Nhà trai</option>
                   <option value="bride-family">Nhà gái</option>
@@ -288,7 +293,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
+              <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                 Khách đến địa điểm như thế nào? <span className="text-primary">*</span>
               </label>
               <div className="space-y-2">
@@ -298,8 +303,8 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all
                                 ${
                                   formData.transport === opt.value
-                                    ? 'border-primary bg-primary/5 ring-2 ring-primary/20'
-                                    : 'border-secondary/30 hover:border-primary/40 hover:bg-secondary/10'
+                                    ? 'border-primary bg-primary/5 ring-2 ring-primary/15'
+                                    : 'border-border hover:border-primary/40 hover:bg-muted'
                                 }`}
                   >
                     <input
@@ -323,13 +328,13 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                     onChange={handleChange}
                     placeholder="Vui lòng mô tả phương tiện hoặc cách di chuyển…"
                     required
-                    className="rounded-lg border-secondary/30 focus:border-primary focus:ring-primary/20"
+                    className="rounded-lg border-border focus:border-primary focus:ring-primary/20"
                   />
                 </div>
               )}
               {formData.transport === 'family' && (
                 <div className="mt-4 animate-fade-in">
-                  <p className="text-sm font-semibold text-foreground mb-2">
+                  <p className="font-luxe text-[11px] text-gold-foil mb-2">
                     Điểm đón <span className="text-primary">*</span>
                   </p>
                   <div className="space-y-2">
@@ -339,8 +344,8 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all
                                     ${
                                       formData.pickupLocation === opt.value
-                                        ? 'border-primary bg-primary/5 ring-2 ring-primary/20'
-                                        : 'border-secondary/30 hover:border-primary/40 hover:bg-secondary/10'
+                                        ? 'border-primary bg-primary/5 ring-2 ring-primary/15'
+                                        : 'border-border hover:border-primary/40 hover:bg-muted'
                                     }`}
                       >
                         <input
@@ -361,7 +366,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
+              <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                 Lời nhắn thêm (tùy chọn)
               </label>
               <Textarea
@@ -369,7 +374,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Để lại lời chúc hoặc thông tin thêm..."
-                className="rounded-lg border-secondary/30 focus:border-primary focus:ring-primary/20 resize-none"
+                className="rounded-lg border-border focus:border-primary focus:ring-primary/20 resize-none"
                 rows={4}
               />
             </div>
@@ -389,32 +394,69 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               <div className="wing-hover flex-1">
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-luxe text-xs py-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {isEditing ? 'Cập nhật xác nhận' : 'Xác nhận tham dự'}
                 </Button>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-secondary/20 text-center">
-              <p className="text-xs text-muted-foreground">Cần hỗ trợ? Liên hệ ban tổ chức:</p>
-              <p className="text-sm font-semibold text-foreground/80 mt-0.5">Ms. Hạnh — BAN TỔ CHỨC</p>
-              <a href="tel:0936225918" className="text-sm font-semibold text-primary hover:underline">
-                0936 225 918
-              </a>
+            <div className="mt-6 pt-6 border-t border-border">
+              <div
+                className="relative rounded-2xl bg-gradient-to-br from-secondary/40 via-muted to-secondary/30
+                           border border-accent/30 px-5 py-5 md:px-6 md:py-6 text-center shadow-sm"
+              >
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2
+                                 bg-card border border-accent/40 rounded-full px-3 py-0.5
+                                 font-luxe text-[10px] text-gold-foil whitespace-nowrap">
+                  Người điều phối
+                </span>
+                <p className="font-serif-elegant text-sm text-muted-foreground italic mt-1 mb-2">
+                  Cần hỗ trợ? Vui lòng liên hệ:
+                </p>
+                <p className="font-display text-foreground text-lg md:text-xl font-medium mb-1">
+                  Ms. Hạnh
+                </p>
+                <p className="font-luxe text-[11px] text-muted-foreground mb-3">
+                  Ban tổ chức
+                </p>
+                <a
+                  href="tel:0936225918"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5
+                             rounded-full bg-card border-2 border-primary
+                             font-display text-primary text-xl md:text-2xl font-semibold tracking-wider
+                             hover:bg-primary hover:text-primary-foreground transition-all duration-300
+                             shadow-sm hover:shadow-md"
+                  aria-label="Gọi điện cho Ms. Hạnh"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-4 h-4"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  0936 225 918
+                </a>
+              </div>
             </div>
           </div>
         </form>
       </div>
 
       <AlertDialog open={showConfirmation} onOpenChange={setShowConfirmation}>
-        <AlertDialogContent className="bg-white border-secondary/20">
-          <AlertDialogTitle className="font-playfair text-2xl text-primary">
+        <AlertDialogContent className="bg-card border-border">
+          <AlertDialogTitle className="font-display text-2xl text-primary font-medium">
             Xác nhận thông tin
           </AlertDialogTitle>
           <AlertDialogDescription className="text-muted-foreground">
             <p className="mb-3">Bạn sắp xác nhận tham dự:</p>
-            <div className="bg-secondary/10 p-4 rounded-lg space-y-2 text-sm text-foreground">
+            <div className="bg-muted p-4 rounded-lg space-y-2 text-sm text-foreground">
               <p>
                 <span className="font-semibold">Tên:</span> {formData.fullName}
               </p>
@@ -436,14 +478,17 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               )}
             </div>
             <p className="mt-3">Thông tin này có chính xác không?</p>
-            <div className="mt-3 text-xs text-muted-foreground border-t border-secondary/30 pt-3 space-y-0.5">
-              <p>Nếu cần hỗ trợ, liên hệ ban tổ chức:</p>
-              <p className="font-semibold text-foreground/80">Ms. Hạnh — BAN TỔ CHỨC</p>
-              <p>
-                <a href="tel:0936225918" className="font-semibold text-primary hover:underline">
+            <div className="mt-4 border-t border-border pt-4">
+              <div className="rounded-xl bg-secondary/30 border border-accent/30 px-4 py-3 text-center">
+                <p className="font-luxe text-[10px] text-gold-foil mb-1">Người điều phối</p>
+                <p className="font-display text-foreground text-base font-medium">Ms. Hạnh · Ban tổ chức</p>
+                <a
+                  href="tel:0936225918"
+                  className="inline-block mt-1 font-display text-primary text-lg md:text-xl font-semibold tracking-wider hover:underline"
+                >
                   0936 225 918
                 </a>
-              </p>
+              </div>
             </div>
             {errorMsg && (
               <p className="mt-2 text-destructive text-sm">{errorMsg}</p>
@@ -460,7 +505,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             <AlertDialogAction
               onClick={handleConfirm}
               disabled={submitting}
-              className="bg-primary hover:bg-primary/90 text-white"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-luxe text-xs"
             >
               {submitting ? 'Đang gửi…' : 'Xác nhận'}
             </AlertDialogAction>

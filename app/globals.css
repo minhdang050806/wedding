@@ -4,79 +4,89 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Pastel palette: white · blush pink · soft lavender/purple */
-  --background: #FFF8FB;           /* near-white with blush tinge */
-  --foreground: #3A1C2A;           /* deep rose-plum */
-  --card: #FFFFFF;                 /* pure white */
-  --card-foreground: #3A1C2A;
-  --popover: #FFFFFF;
-  --popover-foreground: #3A1C2A;
-  --primary: #C06888;              /* vibrant blush rose */
-  --primary-foreground: #FFFFFF;
-  --secondary: #FFD6E4;            /* soft blush pink */
-  --secondary-foreground: #3A1C2A;
-  --muted: #FFF0F5;                /* near-white pink mist */
-  --muted-foreground: #5A1E38;     /* rose-tinted, higher contrast */
-  --accent: #E0708A;               /* warm rose-pink */
-  --accent-foreground: #FFFFFF;
-  --destructive: #C05060;
+  /* Elegant Beige & Brown — cream · wood brown · champagne gold
+     Source: color.md — Minh Hiếu & Hương Trà palette */
+  --background: #FFF8EE;           /* cream — warm, soft, breathable */
+  --foreground: #3A2418;           /* dark chocolate — body text */
+  --card: #FFFCF6;                 /* warm off-white */
+  --card-foreground: #3A2418;
+  --popover: #FFFCF6;
+  --popover-foreground: #3A2418;
+  --primary: #8B5E3C;              /* wood brown — primary headings */
+  --primary-foreground: #FFF8EE;
+  --secondary: #F2E2C8;            /* sand beige — section bg */
+  --secondary-foreground: #4A2F1A;
+  --muted: #FAF0E0;                /* cream mist */
+  --muted-foreground: #6B3D2E;     /* earthy brown — higher contrast */
+  --accent: #C9A96E;               /* champagne gold — accent */
+  --accent-foreground: #3A2418;
+  --destructive: #A85544;
   --destructive-foreground: #FFFFFF;
-  --border: #EAC8DC;               /* pink-tinted border */
-  --input: #F5EAF0;                /* light pink input */
-  --ring: #C06888;
-  --chart-1: #C06888;
-  --chart-2: #9870B8;
-  --chart-3: #EDD8EC;
-  --chart-4: #C4A87A;
-  --chart-5: #D8B0C8;
+  --border: #E8D5B0;               /* soft gold border */
+  --input: #FAF0E0;                /* warm input */
+  --ring: #C9A96E;
+  --chart-1: #8B5E3C;
+  --chart-2: #C9A96E;
+  --chart-3: #D4B896;
+  --chart-4: #6B3D2E;
+  --chart-5: #C8917A;
   --radius: 0.625rem;
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #3A1C2A;
-  --sidebar-primary: #C06888;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #EDD8EC;
-  --sidebar-accent-foreground: #3A1C2A;
-  --sidebar-border: #EAC8DC;
-  --sidebar-ring: #C06888;
+  --sidebar: #FFFCF6;
+  --sidebar-foreground: #3A2418;
+  --sidebar-primary: #8B5E3C;
+  --sidebar-primary-foreground: #FFF8EE;
+  --sidebar-accent: #E8D5B0;
+  --sidebar-accent-foreground: #3A2418;
+  --sidebar-border: #E8D5B0;
+  --sidebar-ring: #C9A96E;
 
-  --rose-gold: #C4A87A;
-  --rose-deep: #904060;
-  --rose-blush: #F8D8E8;
+  /* Extended palette tokens (referenced by gradients & effects) */
+  --cream: #FFF8EE;
+  --beige-sand: #F2E2C8;
+  --beige-soft: #FAF0E0;
+  --wood-brown: #8B5E3C;
+  --dark-chocolate: #4A2F1A;
+  --earthy-brown: #6B3D2E;
+  --champagne: #D4B896;
+  --gold-classic: #C9A96E;
+  --gold-soft: #E8D5B0;
+  --blush: #F9EAE1;
+  --dusty-rose: #C8917A;
 }
 
 .dark {
-  --background: #1C1612;
-  --foreground: #F2EAE0;
-  --card: #2A211A;
-  --card-foreground: #F2EAE0;
-  --popover: #2A211A;
-  --popover-foreground: #F2EAE0;
-  --primary: #D8B0BC;
-  --primary-foreground: #2C2018;
-  --secondary: #7A9CAE;
-  --secondary-foreground: #FFFFFF;
-  --muted: #3A2E26;
-  --muted-foreground: #C8B8A8;
-  --accent: #9888B0;
-  --accent-foreground: #FFFFFF;
-  --destructive: #E07080;
-  --destructive-foreground: #1C1612;
-  --border: #3A2E26;
-  --input: #32261E;
-  --ring: #D8B0BC;
-  --chart-1: #D8B0BC;
-  --chart-2: #7A9CAE;
-  --chart-3: #9888B0;
-  --chart-4: #C4A87A;
-  --chart-5: #C8A0B0;
-  --sidebar: #2A211A;
-  --sidebar-foreground: #F2EAE0;
-  --sidebar-primary: #D8B0BC;
-  --sidebar-primary-foreground: #2C2018;
-  --sidebar-accent: #7A9CAE;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #3A2E26;
-  --sidebar-ring: #D8B0BC;
+  --background: #1C1410;
+  --foreground: #FAEFD8;
+  --card: #2A1F16;
+  --card-foreground: #FAEFD8;
+  --popover: #2A1F16;
+  --popover-foreground: #FAEFD8;
+  --primary: #D4B896;
+  --primary-foreground: #2A1F16;
+  --secondary: #4A2F1A;
+  --secondary-foreground: #FAEFD8;
+  --muted: #3A2A1E;
+  --muted-foreground: #D4B896;
+  --accent: #C9A96E;
+  --accent-foreground: #1C1410;
+  --destructive: #C05544;
+  --destructive-foreground: #FAEFD8;
+  --border: #4A2F1A;
+  --input: #2A1F16;
+  --ring: #C9A96E;
+  --chart-1: #D4B896;
+  --chart-2: #C9A96E;
+  --chart-3: #8B5E3C;
+  --chart-4: #6B3D2E;
+  --chart-5: #C8917A;
+  --sidebar: #2A1F16;
+  --sidebar-foreground: #FAEFD8;
+  --sidebar-primary: #D4B896;
+  --sidebar-primary-foreground: #2A1F16;
+  --sidebar-accent: #4A2F1A;
+  --sidebar-accent-foreground: #FAEFD8;
+  --sidebar-border: #4A2F1A;
+  --sidebar-ring: #C9A96E;
 }
 
 @theme inline {
@@ -134,42 +144,73 @@
     @apply bg-background text-foreground;
     font-family: var(--font-body);
     font-weight: 400;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
     font-size: 1.0625rem;          /* 17px — slightly larger for Vietnamese diacritics */
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga' 1, 'kern' 1;
   }
 
   html { scroll-behavior: smooth; }
 
-  /* ── Typography utilities ────────────────────────────── */
+  /* ── Typography utilities ────────────────────────────────────
+     Hierarchy: script (display) → serif (headings) → body
+     Weights:   400 body · 500 medium · 600 semibold · 700 bold
+     ──────────────────────────────────────────────────────────── */
   .font-script {
     font-family: var(--font-script);
     font-weight: 400;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
+    line-height: 1.2;
   }
   .font-display {
     font-family: var(--font-cormorant), Georgia, serif;
-    font-weight: 400;          /* was 300 — thin strokes hard to read */
-    letter-spacing: 0.04em;
+    font-weight: 400;
+    letter-spacing: 0.035em;
     font-style: italic;
+    line-height: 1.4;
   }
   .font-luxe {
     font-family: var(--font-be-vietnam), 'Be Vietnam Pro', sans-serif;
     font-weight: 500;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.22em;        /* wider tracking — more refined for caps */
     text-transform: uppercase;
   }
   .font-serif-elegant {
     font-family: var(--font-serif);
-    letter-spacing: 0.018em;
-    font-feature-settings: 'liga' 1;
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    font-feature-settings: 'liga' 1, 'dlig' 1;
   }
   .font-body-elegant {
     font-family: var(--font-body);
-    letter-spacing: 0.012em;
+    font-weight: 400;
+    letter-spacing: 0.008em;
     font-feature-settings: 'liga' 1;
+  }
+
+  /* Heading scale — clean, minimal, with confident contrast */
+  .h-display {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    line-height: 1.1;
+  }
+  .h-section {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+  }
+  .eyebrow {
+    font-family: var(--font-be-vietnam), 'Be Vietnam Pro', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--gold-classic);
   }
 }
 
@@ -202,26 +243,26 @@
   @keyframes glow {
     0%, 100% {
       text-shadow:
-        0 0 20px rgba(192, 104, 136, 0.35),
-        0 0 40px rgba(224, 112, 138, 0.22);
+        0 0 20px rgba(201, 169, 110, 0.32),
+        0 0 40px rgba(139, 94, 60, 0.18);
     }
     50% {
       text-shadow:
-        0 0 32px rgba(192, 104, 136, 0.60),
-        0 0 60px rgba(224, 112, 138, 0.38);
+        0 0 32px rgba(201, 169, 110, 0.55),
+        0 0 60px rgba(139, 94, 60, 0.32);
     }
   }
   @keyframes glow-white {
     0%, 100% {
       text-shadow:
-        0 0 18px rgba(255, 255, 255, 0.55),
-        0 0 40px rgba(220, 200, 210, 0.35),
+        0 0 18px rgba(255, 248, 238, 0.55),
+        0 0 40px rgba(212, 184, 150, 0.35),
         0 2px 6px rgba(0, 0, 0, 0.18);
     }
     50% {
       text-shadow:
-        0 0 30px rgba(255, 255, 255, 0.80),
-        0 0 60px rgba(220, 200, 210, 0.55),
+        0 0 30px rgba(255, 248, 238, 0.80),
+        0 0 60px rgba(212, 184, 150, 0.55),
         0 2px 6px rgba(0, 0, 0, 0.18);
     }
   }
@@ -303,95 +344,107 @@
 
   /* ── Text effects ───────────────────────────────────── */
 
-  /* Pearl shimmer — deep rose → blush → soft pink, white-pink theme */
+  /* Headline shimmer — wood brown → champagne gold → wood brown
+     Subtle, sophisticated movement; reads as solid color on quick glance. */
   .text-shimmer {
     background: linear-gradient(
       90deg,
-      #7A2858 0%,
-      #C06080 25%,
-      #E8A8C0 50%,
-      #E07898 75%,
-      #7A2858 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 6s linear infinite;
-    filter:
-      drop-shadow(0 1px 0 rgba(154, 112, 130, 0.30))
-      drop-shadow(0 4px 14px rgba(192, 144, 160, 0.28))
-      drop-shadow(0 0 1px rgba(255, 255, 255, 0.55));
-    line-height: 1.45;
-    padding-top: 0.25em;
-    padding-bottom: 0.3em;
-    overflow: visible;
-    display: inline-block;
-  }
-
-  /* White/pearl text — for script on photo or colored-background sections */
-  .text-pearl {
-    color: #FFFFFF;
-    line-height: 1.45;
-    padding-top: 0.25em;
-    padding-bottom: 0.3em;
-    display: inline-block;
-    filter:
-      drop-shadow(0 1px 2px rgba(0, 0, 0, 0.20))
-      drop-shadow(0 4px 16px rgba(192, 144, 160, 0.40));
-  }
-
-  .text-rose-gold {
-    background: linear-gradient(135deg, #C4A87A 0%, #DDBF90 50%, #C4A87A 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(154, 112, 130, 0.18));
-    line-height: 1.45;
-    padding-top: 0.25em;
-    padding-bottom: 0.3em;
-    display: inline-block;
-  }
-
-  /* Champagne gold foil — warm amber shimmer */
-  .text-gold-foil {
-    background: linear-gradient(
-      135deg,
-      #7A5C3A 0%,
-      #B09060 25%,
-      #CCB080 45%,
-      #B09060 60%,
-      #7A5C3A 100%
+      #4A2F1A 0%,
+      #8B5E3C 25%,
+      #C9A96E 50%,
+      #8B5E3C 75%,
+      #4A2F1A 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 8s linear infinite;
-    font-weight: 700;
+    filter:
+      drop-shadow(0 1px 0 rgba(74, 47, 26, 0.18))
+      drop-shadow(0 4px 14px rgba(139, 94, 60, 0.16));
+    line-height: 1.3;
+    padding-top: 0.18em;
+    padding-bottom: 0.22em;
+    overflow: visible;
+    display: inline-block;
+  }
+
+  /* Cream text — for script on photo or dark-brown sections */
+  .text-pearl {
+    color: #FFF8EE;
+    line-height: 1.3;
+    padding-top: 0.18em;
+    padding-bottom: 0.22em;
+    display: inline-block;
+    filter:
+      drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25))
+      drop-shadow(0 4px 16px rgba(74, 47, 26, 0.35));
+  }
+
+  /* Champagne — single-line warm gold (no animation) */
+  .text-rose-gold {
+    background: linear-gradient(135deg, #B08550 0%, #D4B896 50%, #B08550 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 2px rgba(74, 47, 26, 0.15));
+    line-height: 1.3;
+    padding-top: 0.18em;
+    padding-bottom: 0.22em;
+    display: inline-block;
+  }
+
+  /* Champagne gold foil — eyebrow labels, accent text */
+  .text-gold-foil {
+    background: linear-gradient(
+      135deg,
+      #8B5E3C 0%,
+      #B08550 25%,
+      #C9A96E 50%,
+      #B08550 75%,
+      #8B5E3C 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 10s linear infinite;
+    font-weight: 600;
+  }
+
+  /* Solid champagne — for body accents where shimmer would feel busy */
+  .text-champagne {
+    color: var(--gold-classic);
   }
 
   /* ── Backgrounds ────────────────────────────────────── */
-  /* White → blush pink gradient */
+  /* Cream → soft beige → champagne whisper — the 70-20-10 base */
   .bg-romantic-gradient {
-    background: linear-gradient(135deg, #FFFFFF 0%, #FDE8F0 40%, #F0E0F8 100%);
+    background: linear-gradient(135deg, #FFF8EE 0%, #FAF0E0 50%, #F2E2C8 100%);
   }
-  /* Lavender → white → blush */
+  /* Inverse — beige → cream → soft gold */
   .bg-majestic-gradient {
-    background: linear-gradient(135deg, #F0E0F8 0%, #FFFFFF 50%, #FDE8F0 100%);
+    background: linear-gradient(135deg, #F2E2C8 0%, #FFF8EE 50%, #E8D5B0 100%);
+  }
+  /* Deep section — dark chocolate for "Beautiful Chapter" type panels */
+  .bg-chapter {
+    background:
+      linear-gradient(135deg, rgba(74, 47, 26, 0.94) 0%, rgba(107, 61, 46, 0.92) 100%);
+    color: var(--cream);
   }
 
   /* ── Glow card ──────────────────────────────────────── */
   .card-glow {
     box-shadow:
-      0 4px 20px rgba(192, 144, 160, 0.08),
-      0 10px 40px rgba(168, 152, 188, 0.06);
+      0 4px 20px rgba(74, 47, 26, 0.06),
+      0 10px 40px rgba(139, 94, 60, 0.05);
     transition: box-shadow 0.4s ease, transform 0.4s ease;
   }
   .card-glow:hover {
     box-shadow:
-      0 8px 30px rgba(192, 144, 160, 0.16),
-      0 16px 60px rgba(168, 152, 188, 0.10);
+      0 8px 30px rgba(74, 47, 26, 0.12),
+      0 16px 60px rgba(139, 94, 60, 0.08);
     transform: translateY(-4px);
   }
 
@@ -401,14 +454,14 @@
     transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s ease;
   }
   .img-hover:hover img {
-    transform: scale(1.08);
-    filter: saturate(1.1) brightness(1.03);
+    transform: scale(1.06);
+    filter: saturate(1.05) brightness(1.02);
   }
   .img-hover::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(154, 112, 130, 0.30) 100%);
+    background: linear-gradient(180deg, transparent 50%, rgba(74, 47, 26, 0.32) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -445,7 +498,7 @@
     pointer-events: none;
     z-index: 10;
     opacity: 0;
-    filter: drop-shadow(0 0 5px rgba(192, 104, 136, 0.45));
+    filter: drop-shadow(0 0 5px rgba(201, 169, 110, 0.55));
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
   }
 
@@ -455,7 +508,7 @@
     right: calc(100% + 4px);
     transform: translateY(-50%) scaleX(0);
     transform-origin: right center;
-    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><path d='M64,16 C48,1 20,0 0,6 C15,10 34,12 52,16 C34,20 15,22 0,26 C20,32 48,31 64,16 Z' fill='%23E8A0C0' opacity='0.55'/><path d='M54,16 C40,3 18,2 0,7 C13,11 28,13 44,16 C28,19 13,21 0,25 C18,30 40,29 54,16 Z' fill='%23C06888' opacity='0.88'/></svg>");
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><path d='M64,16 C48,1 20,0 0,6 C15,10 34,12 52,16 C34,20 15,22 0,26 C20,32 48,31 64,16 Z' fill='%23E8D5B0' opacity='0.55'/><path d='M54,16 C40,3 18,2 0,7 C13,11 28,13 44,16 C28,19 13,21 0,25 C18,30 40,29 54,16 Z' fill='%23C9A96E' opacity='0.88'/></svg>");
   }
 
   /* Right wing — mirror of left, tip points toward button */
@@ -464,7 +517,7 @@
     left: calc(100% + 4px);
     transform: translateY(-50%) scaleX(0);
     transform-origin: left center;
-    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><path d='M0,16 C16,1 44,0 64,6 C49,10 30,12 12,16 C30,20 49,22 64,26 C44,32 16,31 0,16 Z' fill='%23E8A0C0' opacity='0.55'/><path d='M10,16 C24,3 46,2 64,7 C51,11 36,13 20,16 C36,19 51,21 64,25 C46,30 24,29 10,16 Z' fill='%23C06888' opacity='0.88'/></svg>");
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'><path d='M0,16 C16,1 44,0 64,6 C49,10 30,12 12,16 C30,20 49,22 64,26 C44,32 16,31 0,16 Z' fill='%23E8D5B0' opacity='0.55'/><path d='M10,16 C24,3 46,2 64,7 C51,11 36,13 20,16 C36,19 51,21 64,25 C46,30 24,29 10,16 Z' fill='%23C9A96E' opacity='0.88'/></svg>");
   }
 
   /* Hover: spread wings open */

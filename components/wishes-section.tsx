@@ -89,7 +89,7 @@ export function WishesSection() {
             <div className="wing-hover">
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2 rounded-lg transition-all duration-300"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-luxe text-xs py-3 rounded-lg transition-all duration-300"
               >
                 Gửi lời chúc
               </Button>

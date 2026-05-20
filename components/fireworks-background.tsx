@@ -16,7 +16,7 @@ interface Firework {
   particles: Particle[];
 }
 
-const COLORS = ['#C9A96A', '#F4C2D7', '#8B2447', '#FFE4E8', '#D4A017', '#FFC0CB', '#fff'];
+const COLORS = ['#C9A96E', '#D4B896', '#E8D5B0', '#8B5E3C', '#6B3D2E', '#FFF8EE', '#F2E2C8'];
 
 export function FireworksBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

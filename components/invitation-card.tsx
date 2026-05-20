@@ -153,7 +153,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                   href="https://maps.app.goo.gl/3973we9cFsajuSMVA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full px-6 py-3 bg-white border-2 border-primary text-primary text-center font-luxe text-xs rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg"
+                  className="block w-full px-6 py-3 bg-card border-2 border-primary text-primary text-center font-luxe text-xs rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg"
                 >
                   Xem bản đồ
                 </a>
@@ -161,7 +161,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
               <div className="wing-hover">
                 <a
                   href="#rsvp"
-                  className="block w-full px-6 py-3 bg-gradient-to-r from-primary via-[#8B2447] to-primary bg-[length:200%_auto] hover:bg-right text-white text-center font-luxe text-xs rounded-full transition-all duration-500 shadow-lg hover:shadow-2xl"
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-primary via-[#6B3D2E] to-primary bg-[length:200%_auto] hover:bg-right text-primary-foreground text-center font-luxe text-xs rounded-full transition-all duration-500 shadow-lg hover:shadow-2xl"
                 >
                   Xác nhận tham dự
                 </a>
