@@ -7,20 +7,44 @@ import { Redis } from '@upstash/redis';
  * process-local in-memory Map when env vars are missing — so `npm run dev`
  * still works without setup, with the caveat that data resets on restart
  * and isn't shared across processes.
+ *
+ * RSVPs use Redis Hash (HSET/HGETALL/HDEL) so that each submission is
+ * an atomic write to a single hash field. The old approach (GET full array →
+ * splice → SET) had a race window on Vercel's concurrent serverless functions:
+ * two simultaneous submits would both read the same stale list and the later
+ * write would silently discard the earlier one.
  */
 
 const GUESTS_KEY = 'wedding:guests';
-const RSVPS_KEY = 'wedding:rsvps';
+const RSVPS_HASH_KEY = 'wedding:rsvps_h'; // Redis Hash: field=guestKey, value=StoredRsvp
 
-type StoreShape = Record<string, unknown[]>;
+type MemoryStoreShape = Record<string, unknown[]>;
+type MemoryHashShape = Record<string, Record<string, unknown>>;
 
 class MemoryStore {
-  private data: StoreShape = {};
+  private lists: MemoryStoreShape = {};
+  private hashes: MemoryHashShape = {};
+
   async get<T>(key: string): Promise<T[] | null> {
-    return (this.data[key] as T[]) ?? null;
+    return (this.lists[key] as T[]) ?? null;
   }
   async set<T>(key: string, value: T[]): Promise<void> {
-    this.data[key] = value as unknown[];
+    this.lists[key] = value as unknown[];
+  }
+  async hget<T>(key: string, field: string): Promise<T | null> {
+    return ((this.hashes[key]?.[field] as T) ?? null);
+  }
+  async hset<T>(key: string, field: string, value: T): Promise<void> {
+    if (!this.hashes[key]) this.hashes[key] = {};
+    this.hashes[key][field] = value as unknown;
+  }
+  async hgetall<T>(key: string): Promise<Record<string, T> | null> {
+    const h = this.hashes[key];
+    if (!h) return null;
+    return h as Record<string, T>;
+  }
+  async hdel(key: string, field: string): Promise<void> {
+    if (this.hashes[key]) delete this.hashes[key][field];
   }
 }
 
@@ -53,7 +77,7 @@ async function writeList<T>(key: string, list: T[]): Promise<void> {
   await memory.set(key, list);
 }
 
-// ───────── Guests ──────────────────────────────────────────────
+// ───────── Guests (array, low-concurrency admin tool) ──────────
 
 export type StoredGuest = {
   id: string;
@@ -99,7 +123,7 @@ export async function deleteGuest(id: string): Promise<boolean> {
   return true;
 }
 
-// ───────── RSVPs ───────────────────────────────────────────────
+// ───────── RSVPs (Redis Hash — each guestKey is a separate field) ──
 
 export type StoredRsvp = {
   id: string;
@@ -118,37 +142,62 @@ export type StoredRsvp = {
 };
 
 export async function listRsvps(): Promise<StoredRsvp[]> {
-  return readList<StoredRsvp>(RSVPS_KEY);
+  if (redis) {
+    const hash = await redis.hgetall<Record<string, StoredRsvp>>(RSVPS_HASH_KEY);
+    if (!hash) return [];
+    return Object.values(hash);
+  }
+  const hash = await memory.hgetall<StoredRsvp>(RSVPS_HASH_KEY);
+  if (!hash) return [];
+  return Object.values(hash);
 }
 
 export async function findRsvpByGuestKey(
   guestKey: string,
 ): Promise<StoredRsvp | null> {
-  const list = await listRsvps();
-  return list.find((r) => r.guestKey === guestKey) ?? null;
+  if (redis) {
+    const rsvp = await redis.hget<StoredRsvp>(RSVPS_HASH_KEY, guestKey);
+    return rsvp ?? null;
+  }
+  return memory.hget<StoredRsvp>(RSVPS_HASH_KEY, guestKey);
 }
 
 export async function upsertRsvp(
   input: Omit<StoredRsvp, 'id' | 'submittedAt'>,
 ): Promise<StoredRsvp> {
-  const list = await listRsvps();
-  const idx = list.findIndex((r) => r.guestKey === input.guestKey);
+  if (redis) {
+    const existing = await redis.hget<StoredRsvp>(RSVPS_HASH_KEY, input.guestKey);
+    const next: StoredRsvp = {
+      ...input,
+      id: existing?.id ?? cryptoRandomId(),
+      submittedAt: Date.now(),
+    };
+    // Atomic: only touches the one field for this guestKey
+    await redis.hset(RSVPS_HASH_KEY, { [input.guestKey]: next });
+    return next;
+  }
+  const existing = await memory.hget<StoredRsvp>(RSVPS_HASH_KEY, input.guestKey);
   const next: StoredRsvp = {
     ...input,
-    id: idx >= 0 ? list[idx].id : cryptoRandomId(),
+    id: existing?.id ?? cryptoRandomId(),
     submittedAt: Date.now(),
   };
-  if (idx >= 0) list[idx] = next;
-  else list.push(next);
-  await writeList(RSVPS_KEY, list);
+  await memory.hset(RSVPS_HASH_KEY, input.guestKey, next);
   return next;
 }
 
 export async function deleteRsvp(id: string): Promise<boolean> {
-  const list = await listRsvps();
-  const next = list.filter((r) => r.id !== id);
-  if (next.length === list.length) return false;
-  await writeList(RSVPS_KEY, next);
+  if (redis) {
+    const all = await listRsvps();
+    const entry = all.find((r) => r.id === id);
+    if (!entry) return false;
+    await redis.hdel(RSVPS_HASH_KEY, entry.guestKey);
+    return true;
+  }
+  const all = await listRsvps();
+  const entry = all.find((r) => r.id === id);
+  if (!entry) return false;
+  await memory.hdel(RSVPS_HASH_KEY, entry.guestKey);
   return true;
 }
 
