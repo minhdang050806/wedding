@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
@@ -48,7 +48,7 @@ export function GallerySection() {
 
       <div className="relative max-w-6xl mx-auto w-full">
         <div className="text-center mb-6 md:mb-8">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
             Kỷ niệm đẹp
           </div>
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">

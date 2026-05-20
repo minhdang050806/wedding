@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { CheckCircle2, Trash2, Users } from 'lucide-react';
 import {
@@ -43,7 +43,7 @@ export function ConfirmedGuestsTable() {
 
       <div className="relative max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <p className="font-luxe text-gold-foil text-[11px] mb-3">Khách đã xác nhận</p>
+          <p className="font-luxe text-gold-foil text-[13px] mb-3">Khách đã xác nhận</p>
           <h2 className="font-script text-shimmer text-4xl md:text-5xl mb-3">
             Danh sách xác nhận tham dự
           </h2>
@@ -221,7 +221,7 @@ function Th({
 }) {
   return (
     <th
-      className={`px-4 py-3 text-${align} font-luxe text-[10px] text-gold-foil whitespace-nowrap`}
+      className={`px-4 py-3 text-${align} font-luxe text-[13px] text-gold-foil whitespace-nowrap`}
     >
       {children}
     </th>
@@ -241,7 +241,7 @@ function Td({
 function MobileField({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="font-luxe text-[9px] text-gold-foil mb-0.5">{label}</p>
+      <p className="font-luxe text-[12px] text-gold-foil mb-0.5">{label}</p>
       <p className="text-foreground">{value}</p>
     </div>
   );

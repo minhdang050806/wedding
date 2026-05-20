@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 export function DresscodeSection() {
   const colors = [
@@ -31,7 +31,7 @@ export function DresscodeSection() {
       <div className="relative max-w-3xl mx-auto w-full">
         {/* Header */}
         <div className="text-center mb-6 md:mb-10">
-          <p className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
+          <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
             Trang phục đề xuất
           </p>
           <h2
@@ -130,7 +130,7 @@ function ColorSphere({
       >
         {label}
       </p>
-      <p className="font-luxe text-gold-foil text-[7px] sm:text-[9px] mt-1 tracking-[0.15em]">
+      <p className="font-luxe text-gold-foil text-[7px] sm:text-[12px] mt-1 tracking-[0.15em]">
         {hexLabel}
       </p>
     </div>

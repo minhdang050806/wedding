@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 
@@ -79,7 +79,7 @@ export function HeroSection() {
           <span className="h-px w-6 bg-gradient-to-l from-transparent to-white/40" />
         </div>
 
-        <p className="font-luxe text-white/70 text-[10px] md:text-sm mb-3 md:mb-8">
+        <p className="font-luxe text-white/70 text-[13px] md:text-sm mb-3 md:mb-8">
           The Wedding of
         </p>
 
@@ -120,7 +120,7 @@ export function HeroSection() {
         {/* Countdown */}
         <div className="wing-hover inline-block mb-4 md:mb-10">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl px-4 md:px-8 py-4 md:py-8 border border-white/20">
-            <p className="font-luxe text-white/60 text-[9px] md:text-xs mb-3 md:mb-6">
+            <p className="font-luxe text-white/60 text-[12px] md:text-xs mb-3 md:mb-6">
               Đếm ngược đến ngày trọng đại
             </p>
             <div className="flex items-start justify-center">
@@ -135,7 +135,7 @@ export function HeroSection() {
                         {String(item.value).padStart(2, '0')}
                       </div>
                     </div>
-                    <div className="font-luxe text-[8px] md:text-[10px] text-white/50">
+                    <div className="font-luxe text-[13px] md:text-[13px] text-white/50">
                       {item.label}
                     </div>
                   </div>

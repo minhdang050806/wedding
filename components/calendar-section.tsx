@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Heart } from 'lucide-react';
 
@@ -20,7 +20,7 @@ export function CalendarSection() {
 
       <div className="relative max-w-md mx-auto w-full">
         <div className="text-center mb-8">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-3">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-3">
             Ngày trọng đại
           </div>
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-3">
@@ -35,7 +35,7 @@ export function CalendarSection() {
 
         <div className="bg-white rounded-3xl card-glow border border-secondary/40 p-6 md:p-8">
           <div className="text-center mb-5">
-            <p className="font-luxe text-[10px] md:text-xs text-muted-foreground mb-1">
+            <p className="font-luxe text-[13px] md:text-sm text-muted-foreground mb-1">
               Tháng
             </p>
             <p className="font-display italic text-4xl md:text-5xl text-shimmer leading-tight">
@@ -47,7 +47,7 @@ export function CalendarSection() {
             {WEEKDAYS.map((day) => (
               <div
                 key={day}
-                className="text-center font-luxe text-[9px] md:text-[10px] text-muted-foreground py-2"
+                className="text-center font-luxe text-[12px] md:text-[13px] text-muted-foreground py-2"
               >
                 {day}
               </div>
@@ -93,7 +93,7 @@ export function CalendarSection() {
           </div>
 
           <div className="mt-6 pt-5 border-t border-secondary/30 text-center">
-            <p className="font-luxe text-gold-foil text-[10px] md:text-xs mb-2">
+            <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
               Chủ nhật
             </p>
             <p className="font-display italic text-2xl md:text-3xl text-foreground/85">

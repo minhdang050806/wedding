@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { MapPin, Calendar, Clock } from 'lucide-react';
 
@@ -31,7 +31,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6 text-center text-white">
-              <p className="font-luxe text-gold-foil text-[10px] md:text-xs mb-2">
+              <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
                 Save the Date
               </p>
               <p
@@ -45,7 +45,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
 
           {/* Card header */}
           <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/10 px-8 py-5 text-center border-b border-secondary/30">
-            <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
+            <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
               Trân trọng kính mời
             </div>
             <h2 className="font-script text-shimmer heading-script text-5xl md:text-6xl mb-1">
@@ -72,7 +72,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                     <span className="absolute top-2 right-2 w-4 h-4 border-t border-r border-accent/30 pointer-events-none" />
                     <span className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-accent/30 pointer-events-none" />
                     <span className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-accent/30 pointer-events-none" />
-                    <p className="font-luxe text-gold-foil text-[10px] md:text-xs mb-3">
+                    <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-3">
                       {fam.title}
                     </p>
                     <div className="text-foreground/85 text-base space-y-1 font-body-elegant">
@@ -118,7 +118,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                       <Icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-luxe text-gold-foil text-[10px] md:text-xs mb-1">
+                      <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-1">
                         {label}
                       </p>
                       {typeof value === 'string' ? (

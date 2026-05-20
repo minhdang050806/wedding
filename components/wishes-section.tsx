@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -36,7 +36,7 @@ export function WishesSection() {
     <section className="w-full py-4 md:py-6 px-4 bg-background">
       <div className="max-w-3xl mx-auto w-full">
         <div className="text-center mb-6 md:mb-8">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
             Sự chúc phúc
           </div>
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">

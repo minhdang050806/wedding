@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 export function LoveStorySection() {
   return (
@@ -10,7 +10,7 @@ export function LoveStorySection() {
 
       <div className="relative max-w-5xl mx-auto w-full">
         <div className="relative text-center mb-8 md:mb-10">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-3">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-3">
             Lời tâm tình
           </div>
           <h2

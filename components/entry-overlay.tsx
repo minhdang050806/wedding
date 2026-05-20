@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { getWeddingAudio } from '@/lib/wedding-audio';
@@ -86,7 +86,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
         </div>
 
         {/* "Trân trọng kính mời" label */}
-        <p className="font-luxe text-[#C4A87A]/80 text-[9px] tracking-[0.35em] mb-4">
+        <p className="font-luxe text-[#C4A87A]/80 text-[12px] tracking-[0.35em] mb-4">
           TRÂN TRỌNG KÍNH MỜI
         </p>
 
@@ -139,7 +139,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
         </h1>
 
         {/* Date */}
-        <p className="font-luxe text-white/35 text-[9px] tracking-[0.35em] mt-4 mb-7">
+        <p className="font-luxe text-white/35 text-[12px] tracking-[0.35em] mt-4 mb-7">
           07 · 06 · 2026
         </p>
 
@@ -152,7 +152,7 @@ export function EntryOverlay({ salutation = '', name = 'Quý khách' }: EntryOve
 
         {/* Enter prompt */}
         <div className="flex flex-col items-center gap-2 animate-pulse">
-          <p className="font-luxe text-white/45 text-[8px] tracking-[0.4em]">
+          <p className="font-luxe text-white/45 text-[13px] tracking-[0.4em]">
             NHẤN ĐỂ VÀO XEM THIỆP MỜI
           </p>
           <span className="text-[#C4A87A]/55 text-lg mt-0.5">↓</span>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { MapPin, Navigation } from 'lucide-react';
 
@@ -16,7 +16,7 @@ export function MapSection() {
     <section className="w-full py-4 md:py-6 px-4 bg-background">
       <div className="max-w-4xl mx-auto w-full">
         <div className="text-center mb-6 md:mb-8">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
             Địa điểm sự kiện
           </div>
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">
@@ -52,18 +52,18 @@ export function MapSection() {
 
             <div className="space-y-4 text-sm">
               <div>
-                <p className="font-luxe text-gold-foil text-[10px] mb-1">Tên địa điểm</p>
+                <p className="font-luxe text-gold-foil text-[13px] mb-1">Tên địa điểm</p>
                 <p className="text-foreground font-semibold">{VENUE.name}</p>
               </div>
 
               <div>
-                <p className="font-luxe text-gold-foil text-[10px] mb-1">Địa chỉ</p>
+                <p className="font-luxe text-gold-foil text-[13px] mb-1">Địa chỉ</p>
                 <p className="text-foreground">{VENUE.addressLine}</p>
                 <p className="text-muted-foreground">{VENUE.district}</p>
               </div>
 
               <div>
-                <p className="font-luxe text-gold-foil text-[10px] mb-1">Plus Code</p>
+                <p className="font-luxe text-gold-foil text-[13px] mb-1">Plus Code</p>
                 <p className="text-muted-foreground font-mono text-xs">2FQ2+7W Yên Bài</p>
               </div>
             </div>

@@ -156,11 +156,10 @@
     font-style: italic;
   }
   .font-luxe {
-    font-family: var(--font-cormorant), Georgia, serif;
+    font-family: var(--font-be-vietnam), 'Be Vietnam Pro', sans-serif;
     font-weight: 500;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-feature-settings: 'liga' 1, 'calt' 1;
   }
   .font-serif-elegant {
     font-family: var(--font-serif);

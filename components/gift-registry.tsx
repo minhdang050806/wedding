@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Copy, Check, Gift } from 'lucide-react';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ export function GiftRegistry() {
     <section className="w-full py-12 md:py-14 lg:py-16 px-4 bg-gradient-to-b from-background to-secondary/10 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
       <div className="max-w-2xl mx-auto w-full">
         <div className="text-center mb-6 md:mb-8">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
             Tặng quà mừng
           </div>
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">
@@ -119,12 +119,12 @@ export function GiftRegistry() {
 
               <div className="space-y-4 mb-6">
                 <div>
-                  <p className="font-luxe text-gold-foil text-[10px] mb-2">Ngân hàng</p>
+                  <p className="font-luxe text-gold-foil text-[13px] mb-2">Ngân hàng</p>
                   <p className="text-foreground font-semibold">{bankInfo.bank}</p>
                 </div>
 
                 <div>
-                  <p className="font-luxe text-gold-foil text-[10px] mb-2">Số tài khoản</p>
+                  <p className="font-luxe text-gold-foil text-[13px] mb-2">Số tài khoản</p>
                   <div className="flex items-center gap-3">
                     <p className="text-foreground font-mono font-semibold text-lg">
                       {bankInfo.accountNumber}
@@ -140,7 +140,7 @@ export function GiftRegistry() {
                 </div>
 
                 <div>
-                  <p className="font-luxe text-gold-foil text-[10px] mb-2">Chủ tài khoản</p>
+                  <p className="font-luxe text-gold-foil text-[13px] mb-2">Chủ tài khoản</p>
                   <p className="text-foreground font-semibold">{bankInfo.accountHolder}</p>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export function GiftRegistry() {
               <button
                 onClick={() => setOpened(false)}
                 className="inline-flex items-center gap-2 px-5 py-2 rounded-full
-                           font-luxe text-[11px] text-muted-foreground border border-border
+                           font-luxe text-[13px] text-muted-foreground border border-border
                            hover:text-primary hover:border-primary/50 transition-all"
               >
                 <Gift className="w-3.5 h-3.5" />

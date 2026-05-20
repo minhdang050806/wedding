@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -111,7 +111,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
       <section id="rsvp" className="w-full py-4 md:py-6 px-4 bg-background">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
-            <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
+            <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-4">
               Đã xác nhận tham dự
             </div>
             <h2
@@ -180,7 +180,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                     setIsEditing(true);
                   }}
                   className="inline-flex items-center gap-2 px-5 py-2 rounded-full
-                             font-luxe text-[11px] text-muted-foreground border border-border
+                             font-luxe text-[13px] text-muted-foreground border border-border
                              hover:text-primary hover:border-primary/50 transition-all"
                 >
                   <Pencil className="w-3.5 h-3.5" />
@@ -198,7 +198,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
     <section id="rsvp" className="w-full py-8 md:py-10 px-4 bg-background">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
+          <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-4">
             Phần đăng ký khách mời
           </div>
           <h2
@@ -486,7 +486,7 @@ function Row({
         multiline ? 'flex-col gap-1' : 'justify-between gap-4'
       } pb-3 border-b border-secondary/20 last:border-0`}
     >
-      <span className="font-luxe text-[10px] text-gold-foil whitespace-nowrap">
+      <span className="font-luxe text-[13px] text-gold-foil whitespace-nowrap">
         {label}
       </span>
       <span

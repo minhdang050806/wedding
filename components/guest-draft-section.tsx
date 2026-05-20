@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useRef, useState } from 'react';
 import { Pencil, X, Plus, Check } from 'lucide-react';
@@ -107,7 +107,7 @@ export function GuestDraftSection() {
 
       <div className="relative max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <p className="font-luxe text-gold-foil text-[11px] mb-3">Draft khách mời</p>
+          <p className="font-luxe text-gold-foil text-[13px] mb-3">Draft khách mời</p>
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-3">
             Danh sách khách mời
           </h2>
@@ -129,7 +129,7 @@ export function GuestDraftSection() {
               </span>
               <button
                 onClick={cancelEdit}
-                className="font-luxe text-[10px] text-muted-foreground hover:text-primary transition-colors"
+                className="font-luxe text-[13px] text-muted-foreground hover:text-primary transition-colors"
               >
                 Hủy
               </button>
@@ -138,7 +138,7 @@ export function GuestDraftSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-[160px_1fr_auto] gap-3 mb-3">
             <div className="flex flex-col gap-1">
-              <label className="font-luxe text-[10px] text-gold-foil pl-2">
+              <label className="font-luxe text-[13px] text-gold-foil pl-2">
                 Cách xưng hô
               </label>
               <input
@@ -159,7 +159,7 @@ export function GuestDraftSection() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="font-luxe text-[10px] text-gold-foil pl-2">
+              <label className="font-luxe text-[13px] text-gold-foil pl-2">
                 Tên khách mời
               </label>
               <input
@@ -217,7 +217,7 @@ export function GuestDraftSection() {
           {guests.length > 0 && (
             <div className="flex items-center gap-3 mb-6">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent to-accent/40" />
-              <span className="font-luxe text-[10px] text-gold-foil whitespace-nowrap">
+              <span className="font-luxe text-[13px] text-gold-foil whitespace-nowrap">
                 {guests.length} khách mời
               </span>
               <div className="flex-1 h-px bg-gradient-to-l from-transparent to-accent/40" />
@@ -293,7 +293,7 @@ export function GuestDraftSection() {
           role="status"
           className="fixed left-1/2 -translate-x-1/2 bottom-8 z-50
                      bg-primary text-white rounded-full px-5 py-2
-                     font-luxe text-[11px] shadow-xl animate-fade-in-up"
+                     font-luxe text-[13px] shadow-xl animate-fade-in-up"
         >
           {toast}
         </div>

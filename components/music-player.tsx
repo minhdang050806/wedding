@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { Play, Pause } from 'lucide-react';
@@ -85,7 +85,7 @@ export function MusicPlayer({
         className="absolute left-full ml-3 top-1/2 -translate-y-1/2
                    whitespace-nowrap px-3 py-1.5 rounded-full
                    bg-white/90 border border-secondary/40
-                   font-luxe text-[9px] text-foreground/70
+                   font-luxe text-[12px] text-foreground/70
                    opacity-0 group-hover:opacity-100 pointer-events-none
                    transition-opacity duration-300 hidden md:block"
       >

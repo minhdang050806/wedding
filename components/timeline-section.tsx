@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 interface TimelineItem {
   time: string;
@@ -41,7 +41,7 @@ export function TimelineSection() {
 
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
-          <p className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">Chương trình</p>
+          <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">Chương trình</p>
           <h2
             className="font-script text-shimmer animate-glow tracking-wide"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}
