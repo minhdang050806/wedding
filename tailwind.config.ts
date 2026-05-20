@@ -9,7 +9,8 @@ const config = {
     extend: {
       fontFamily: {
         sans: 'var(--font-be-vietnam), system-ui, -apple-system, sans-serif',
-        playfair: 'var(--font-playfair), Georgia, serif',
+        display: 'var(--font-josefin), system-ui, sans-serif',
+        luxe: 'var(--font-cinzel), Georgia, serif',
       },
     },
   },

@@ -1,23 +1,13 @@
 import type { Metadata } from 'next'
 import {
-  Playfair_Display,
   Be_Vietnam_Pro,
-  Great_Vibes,
-  Cormorant_Garamond,
+  Josefin_Sans,
   Cinzel,
-  Italiana,
-  EB_Garamond,
 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { FloatingPetals } from '@/components/floating-petals'
 import { FireworksBackground } from '@/components/fireworks-background'
 import './globals.css'
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '700', '900'],
-})
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin', 'vietnamese'],
@@ -25,36 +15,16 @@ const beVietnamPro = Be_Vietnam_Pro({
   weight: ['300', '400', '500', '600', '700'],
 })
 
-const greatVibes = Great_Vibes({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-great-vibes',
-  weight: ['400'],
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin', 'vietnamese'],
-  variable: '--font-cormorant',
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+const josefinSans = Josefin_Sans({
+  subsets: ['latin'],
+  variable: '--font-josefin',
+  weight: ['100', '300', '400', '600'],
 })
 
 const cinzel = Cinzel({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-cinzel',
-  weight: ['400', '500', '600', '700'],
-})
-
-const italiana = Italiana({
-  subsets: ['latin'],
-  variable: '--font-italiana',
-  weight: ['400'],
-})
-
-const ebGaramond = EB_Garamond({
-  subsets: ['latin', 'vietnamese'],
-  variable: '--font-eb-garamond',
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500', '700'],
 })
 
 export const metadata: Metadata = {
@@ -86,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${playfairDisplay.variable} ${beVietnamPro.variable} ${greatVibes.variable} ${cormorant.variable} ${cinzel.variable} ${italiana.variable} ${ebGaramond.variable}`}
+      className={`${beVietnamPro.variable} ${josefinSans.variable} ${cinzel.variable}`}
     >
       <body className="font-sans antialiased bg-background text-foreground">
         <FireworksBackground />
