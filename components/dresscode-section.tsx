@@ -60,6 +60,10 @@ export function DresscodeSection() {
 
         {/* Footer note */}
         <div className="relative max-w-xl mx-auto text-center bg-white/70 backdrop-blur-sm rounded-2xl px-5 py-4 md:py-5 border border-secondary/30 card-glow">
+          <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-primary/25 pointer-events-none" />
+          <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-primary/25 pointer-events-none" />
+          <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-primary/25 pointer-events-none" />
+          <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-primary/25 pointer-events-none" />
           <p className="font-serif-elegant text-foreground text-sm md:text-base leading-relaxed">
             Sự đồng điệu trong sắc màu sẽ khiến những bức hình của chúng ta thêm phần
             lung linh ✦

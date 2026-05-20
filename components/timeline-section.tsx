@@ -171,13 +171,11 @@ function TimelineCard({
                   hover:border-primary/30 transition-all duration-500 group
                   ${align === 'right' ? 'text-right' : 'text-left'}`}
     >
-      {/* Decorative corner accent */}
-      <div
-        className={`absolute top-3 ${align === 'right' ? 'right-3' : 'left-3'} w-6 h-px bg-gradient-to-r from-primary/40 to-transparent`}
-      />
-      <div
-        className={`absolute top-3 ${align === 'right' ? 'right-3' : 'left-3'} w-px h-6 bg-gradient-to-b from-primary/40 to-transparent`}
-      />
+      {/* Corner ornaments — all 4 corners */}
+      <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-primary/30 pointer-events-none" />
+      <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-primary/30 pointer-events-none" />
+      <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-primary/30 pointer-events-none" />
+      <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-primary/30 pointer-events-none" />
 
       <h3 className="font-display text-foreground text-xl md:text-2xl mb-1 group-hover:text-primary transition-colors duration-300">
         {event.title}

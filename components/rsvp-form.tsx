@@ -133,6 +133,10 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
           </div>
 
           <div className="relative bg-white rounded-3xl card-glow border border-secondary/40 p-8 md:p-10 overflow-hidden">
+            <span className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/20 pointer-events-none z-10" />
+            <span className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/20 pointer-events-none z-10" />
+            <span className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/20 pointer-events-none z-10" />
+            <span className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/20 pointer-events-none z-10" />
             <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-secondary/20 blur-3xl pointer-events-none" />
 
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -210,8 +214,12 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl shadow-lg p-8 md:p-10"
+          className="relative bg-white rounded-2xl shadow-lg p-8 md:p-10"
         >
+          <span className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/20 pointer-events-none" />
+          <span className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/20 pointer-events-none" />
+          <span className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/20 pointer-events-none" />
+          <span className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/20 pointer-events-none" />
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-semibold text-foreground mb-2">

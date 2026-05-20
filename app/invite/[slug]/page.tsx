@@ -13,6 +13,7 @@ import { VideoSection } from '@/components/video-section';
 import { MapSection } from '@/components/map-section';
 import { Footer } from '@/components/footer';
 import { MusicPlayer } from '@/components/music-player';
+import { EntryOverlay } from '@/components/entry-overlay';
 import { ScrollReveal } from '@/components/scroll-reveal';
 
 function PersonalGreetingBanner({
@@ -143,6 +144,7 @@ function PersonalizedInvite() {
       <ScrollReveal><MapSection /></ScrollReveal>
       <ScrollReveal><Footer /></ScrollReveal>
       <MusicPlayer src="/audio/mot-doi.mp3" />
+      <EntryOverlay />
     </main>
   );
 }

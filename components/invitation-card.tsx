@@ -16,7 +16,12 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
       <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-accent/20 blur-3xl"></div>
 
       <div className="relative max-w-2xl mx-auto">
-        <div className="bg-white rounded-3xl card-glow border border-secondary/40">
+        <div className="relative bg-white rounded-3xl card-glow border border-secondary/40">
+          {/* Corner ornaments */}
+          <span className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary/20 rounded-tl-sm pointer-events-none z-10" />
+          <span className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-primary/20 rounded-tr-sm pointer-events-none z-10" />
+          <span className="absolute bottom-4 left-4 w-7 h-7 border-b-2 border-l-2 border-primary/20 rounded-bl-sm pointer-events-none z-10" />
+          <span className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary/20 rounded-br-sm pointer-events-none z-10" />
           {/* Photo banner */}
           <div className="relative h-64 md:h-80 img-hover rounded-t-3xl overflow-hidden">
             <img
@@ -62,7 +67,11 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                 { title: 'Nhà Gái', father: 'Ông: Nguyễn Thế Long', mother: 'Bà: Lê Thị Hoài' },
               ].map((fam) => (
                 <div key={fam.title} className="wing-hover">
-                  <div className="text-center bg-white/60 rounded-2xl p-3 border border-secondary/20 transition-shadow duration-500 hover:shadow-lg">
+                  <div className="relative text-center bg-white/60 rounded-2xl p-3 border border-secondary/20 transition-shadow duration-500 hover:shadow-lg">
+                    <span className="absolute top-2 left-2 w-4 h-4 border-t border-l border-accent/30 pointer-events-none" />
+                    <span className="absolute top-2 right-2 w-4 h-4 border-t border-r border-accent/30 pointer-events-none" />
+                    <span className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-accent/30 pointer-events-none" />
+                    <span className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-accent/30 pointer-events-none" />
                     <p className="font-luxe text-gold-foil text-[10px] md:text-xs mb-3">
                       {fam.title}
                     </p>
