@@ -414,12 +414,15 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               )}
             </div>
             <p className="mt-3">Thông tin này có chính xác không?</p>
-            <p className="mt-3 text-xs text-muted-foreground border-t border-secondary/30 pt-3">
-              Nếu cần hỗ trợ, liên hệ người điều phối:{' '}
-              <a href="tel:0936225918" className="font-semibold text-primary hover:underline">
-                0936 225 918
-              </a>
-            </p>
+            <div className="mt-3 text-xs text-muted-foreground border-t border-secondary/30 pt-3 space-y-0.5">
+              <p>Nếu cần hỗ trợ, liên hệ ban tổ chức:</p>
+              <p className="font-semibold text-foreground/80">Ms. Hạnh — BAN TỔ CHỨC</p>
+              <p>
+                <a href="tel:0936225918" className="font-semibold text-primary hover:underline">
+                  0936 225 918
+                </a>
+              </p>
+            </div>
             {errorMsg && (
               <p className="mt-2 text-destructive text-sm">{errorMsg}</p>
             )}

@@ -14,7 +14,7 @@ export function MusicPlayer({
 }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
-  const [ready, setReady] = useState(false);
+  const startedRef = useRef(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -23,7 +23,9 @@ export function MusicPlayer({
     audio.loop = true;
     audio.volume = 0.55;
 
-    const tryAutoplay = async () => {
+    const tryPlay = async () => {
+      if (startedRef.current) return;
+      startedRef.current = true;
       try {
         await audio.play();
         setPlaying(true);
@@ -32,13 +34,29 @@ export function MusicPlayer({
       }
     };
 
-    const onCanPlay = () => {
-      setReady(true);
-      tryAutoplay();
+    // Try immediately (works on iOS/Android after user interaction, or some desktop browsers)
+    tryPlay();
+
+    // Fallback: play on first user interaction anywhere on page
+    const onInteraction = () => {
+      tryPlay();
+      window.removeEventListener('click', onInteraction);
+      window.removeEventListener('touchstart', onInteraction);
+      window.removeEventListener('keydown', onInteraction);
+      window.removeEventListener('scroll', onInteraction);
     };
 
-    audio.addEventListener('canplaythrough', onCanPlay, { once: true });
-    return () => audio.removeEventListener('canplaythrough', onCanPlay);
+    window.addEventListener('click', onInteraction, { passive: true });
+    window.addEventListener('touchstart', onInteraction, { passive: true });
+    window.addEventListener('keydown', onInteraction, { passive: true });
+    window.addEventListener('scroll', onInteraction, { passive: true });
+
+    return () => {
+      window.removeEventListener('click', onInteraction);
+      window.removeEventListener('touchstart', onInteraction);
+      window.removeEventListener('keydown', onInteraction);
+      window.removeEventListener('scroll', onInteraction);
+    };
   }, []);
 
   const toggle = async () => {

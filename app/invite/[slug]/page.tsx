@@ -11,7 +11,6 @@ import { LoveStorySection } from '@/components/love-story-section';
 import { GallerySection } from '@/components/gallery-section';
 import { VideoSection } from '@/components/video-section';
 import { WishesSection } from '@/components/wishes-section';
-import { GiftRegistry } from '@/components/gift-registry';
 import { MapSection } from '@/components/map-section';
 import { Footer } from '@/components/footer';
 import { CalendarSection } from '@/components/calendar-section';
@@ -144,7 +143,6 @@ function PersonalizedInvite() {
       <VideoSection />
       <WishesSection />
       <RsvpForm guestKey={guestKey} guestSalutation={salutation} guestName={name} />
-      <GiftRegistry />
       <MapSection />
       <Footer />
       <MusicPlayer src="/audio/mot-doi.mp3" />
