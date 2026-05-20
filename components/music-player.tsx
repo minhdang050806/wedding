@@ -25,6 +25,21 @@ export function MusicPlayer({
     audio.addEventListener('pause', onPause);
     setPlaying(!audio.paused);
 
+    // Thử phát ngay — nếu browser chặn thì phát tại interaction đầu tiên
+    audio.play().catch(() => {
+      const startOnInteraction = () => {
+        audio.play().catch(() => {});
+        window.removeEventListener('click', startOnInteraction);
+        window.removeEventListener('touchstart', startOnInteraction);
+        window.removeEventListener('scroll', startOnInteraction);
+        window.removeEventListener('keydown', startOnInteraction);
+      };
+      window.addEventListener('click', startOnInteraction, { once: true });
+      window.addEventListener('touchstart', startOnInteraction, { once: true });
+      window.addEventListener('scroll', startOnInteraction, { once: true });
+      window.addEventListener('keydown', startOnInteraction, { once: true });
+    });
+
     return () => {
       audio.removeEventListener('play', onPlay);
       audio.removeEventListener('pause', onPause);

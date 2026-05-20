@@ -85,10 +85,6 @@ export function MapSection() {
                 <span className="font-semibold text-foreground">Từ sân bay Nội Bài:</span>{' '}
                 Khoảng 1 giờ 30 phút (~70 km)
               </p>
-              <p>
-                <span className="font-semibold text-foreground">Bãi đỗ xe:</span> Miễn phí
-                trong khuôn viên villa
-              </p>
             </div>
 
             <div className="wing-hover">
