@@ -23,9 +23,9 @@ export function LoveStorySection() {
             Beautiful chapter
           </h2>
           <div className="flex items-center justify-center gap-3 mt-5">
-            <span className="h-px w-12 bg-accent/40" />
+            <span className="h-px w-6 bg-accent/40" />
             <span className="text-accent">❦</span>
-            <span className="h-px w-12 bg-accent/40" />
+            <span className="h-px w-6 bg-accent/40" />
           </div>
         </div>
 

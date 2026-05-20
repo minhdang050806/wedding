@@ -122,9 +122,9 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               {existing.guestName || existing.fullName}!
             </h2>
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="h-px w-12 bg-accent/40" />
+              <span className="h-px w-6 bg-accent/40" />
               <span className="text-accent text-xl">❦</span>
-              <span className="h-px w-12 bg-accent/40" />
+              <span className="h-px w-6 bg-accent/40" />
             </div>
             <p className="font-display italic text-lg text-muted-foreground max-w-xl mx-auto">
               Sự xác nhận của {existing.guestSalutation || 'bạn'} là niềm vinh hạnh lớn

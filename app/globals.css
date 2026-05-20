@@ -16,7 +16,7 @@
   --secondary: #FFD6E4;            /* soft blush pink */
   --secondary-foreground: #3A1C2A;
   --muted: #FFF0F5;                /* near-white pink mist */
-  --muted-foreground: #8A3A60;     /* rose-tinted medium */
+  --muted-foreground: #5A1E38;     /* rose-tinted, higher contrast */
   --accent: #E0708A;               /* warm rose-pink */
   --accent-foreground: #FFFFFF;
   --destructive: #C05060;
@@ -135,7 +135,10 @@
     font-family: var(--font-body);
     font-weight: 400;
     letter-spacing: 0.01em;
-    /* No background-attachment:fixed — causes repaint-on-scroll jank on mobile */
+    font-size: 1.0625rem;          /* 17px — slightly larger for Vietnamese diacritics */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html { scroll-behavior: smooth; }
@@ -148,8 +151,8 @@
   }
   .font-display {
     font-family: var(--font-cormorant), Georgia, serif;
-    font-weight: 300;          /* lighter = more refined */
-    letter-spacing: 0.05em;
+    font-weight: 400;          /* was 300 — thin strokes hard to read */
+    letter-spacing: 0.04em;
     font-style: italic;
   }
   .font-luxe {

@@ -74,9 +74,9 @@ export function HeroSection() {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in py-8 md:py-16">
         {/* Ornament */}
         <div className="mb-3 md:mb-6 flex justify-center items-center gap-3">
-          <span className="h-px w-12 bg-gradient-to-r from-transparent to-white/40" />
+          <span className="h-px w-6 bg-gradient-to-r from-transparent to-white/40" />
           <span className="text-white/60 text-xl md:text-2xl">❦</span>
-          <span className="h-px w-12 bg-gradient-to-l from-transparent to-white/40" />
+          <span className="h-px w-6 bg-gradient-to-l from-transparent to-white/40" />
         </div>
 
         <p className="font-luxe text-white/70 text-[10px] md:text-sm mb-3 md:mb-8">
@@ -92,14 +92,14 @@ export function HeroSection() {
         </h1>
 
         <div className="flex items-center justify-center gap-4 my-2 md:my-6">
-          <div className="h-px w-14 md:w-20 bg-gradient-to-r from-transparent via-white/40 to-white/40" />
+          <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-white/40 to-white/40" />
           <span
             className="font-script text-white/70 leading-none"
             style={{ fontSize: 'clamp(1.5rem, 6vw, 4rem)' }}
           >
             &amp;
           </span>
-          <div className="h-px w-14 md:w-20 bg-gradient-to-l from-transparent via-white/40 to-white/40" />
+          <div className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent via-white/40 to-white/40" />
         </div>
 
         <h2

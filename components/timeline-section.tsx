@@ -49,9 +49,9 @@ export function TimelineSection() {
             Timeline Sự Kiện
           </h2>
           <div className="flex items-center justify-center gap-3 mt-2">
-            <span className="h-px w-12 bg-accent/40" />
+            <span className="h-px w-6 bg-accent/40" />
             <span className="text-accent">❦</span>
-            <span className="h-px w-12 bg-accent/40" />
+            <span className="h-px w-6 bg-accent/40" />
           </div>
         </div>
 
@@ -120,9 +120,9 @@ export function TimelineSection() {
         {/* Footer ornament */}
         <div className="text-center mt-8 md:mt-10">
           <div className="flex items-center justify-center gap-4">
-            <span className="h-px w-16 bg-gradient-to-r from-transparent to-accent/40" />
+            <span className="h-px w-8 bg-gradient-to-r from-transparent to-accent/40" />
             <span className="text-accent/60 text-xl">✦</span>
-            <span className="h-px w-16 bg-gradient-to-l from-transparent to-accent/40" />
+            <span className="h-px w-8 bg-gradient-to-l from-transparent to-accent/40" />
           </div>
         </div>
       </div>

@@ -10,10 +10,8 @@ import { DresscodeSection } from '@/components/dresscode-section';
 import { LoveStorySection } from '@/components/love-story-section';
 import { GallerySection } from '@/components/gallery-section';
 import { VideoSection } from '@/components/video-section';
-import { WishesSection } from '@/components/wishes-section';
 import { MapSection } from '@/components/map-section';
 import { Footer } from '@/components/footer';
-import { CalendarSection } from '@/components/calendar-section';
 import { MusicPlayer } from '@/components/music-player';
 import { ScrollReveal } from '@/components/scroll-reveal';
 
@@ -70,9 +68,9 @@ function PersonalGreetingBanner({
       <div className="relative max-w-3xl mx-auto animate-fade-in-up">
         {/* Ornament top */}
         <div className="flex justify-center items-center gap-3 mb-3 md:mb-6">
-          <span className="h-px w-16 bg-gradient-to-r from-transparent to-accent/60" />
+          <span className="h-px w-8 bg-gradient-to-r from-transparent to-accent/60" />
           <span className="text-accent text-2xl">❦</span>
-          <span className="h-px w-16 bg-gradient-to-l from-transparent to-accent/60" />
+          <span className="h-px w-8 bg-gradient-to-l from-transparent to-accent/60" />
         </div>
 
         <p className="font-luxe text-gold-foil text-xs md:text-sm mb-3 md:mb-6">
@@ -105,9 +103,9 @@ function PersonalGreetingBanner({
         </div>
 
         <div className="flex items-center justify-center gap-3 mt-4 md:mt-8 mb-3 md:mb-6">
-          <span className="h-px w-16 bg-accent/40" />
+          <span className="h-px w-8 bg-accent/40" />
           <span className="text-accent text-lg">✦</span>
-          <span className="h-px w-16 bg-accent/40" />
+          <span className="h-px w-8 bg-accent/40" />
         </div>
 
         <p className="font-serif-elegant italic text-base md:text-xl text-foreground/85 max-w-xl mx-auto">
@@ -137,12 +135,10 @@ function PersonalizedInvite() {
       <ScrollReveal><PersonalGreetingBanner salutation={salutation} name={name} /></ScrollReveal>
       <ScrollReveal><LoveStorySection /></ScrollReveal>
       <ScrollReveal><InvitationCard guestName={fullLabel} /></ScrollReveal>
-      <ScrollReveal><CalendarSection /></ScrollReveal>
       <ScrollReveal><TimelineSection /></ScrollReveal>
       <ScrollReveal><DresscodeSection /></ScrollReveal>
       <ScrollReveal><GallerySection /></ScrollReveal>
       <ScrollReveal><VideoSection /></ScrollReveal>
-      <ScrollReveal><WishesSection /></ScrollReveal>
       <ScrollReveal><RsvpForm guestKey={guestKey} guestSalutation={salutation} guestName={name} /></ScrollReveal>
       <ScrollReveal><MapSection /></ScrollReveal>
       <ScrollReveal><Footer /></ScrollReveal>

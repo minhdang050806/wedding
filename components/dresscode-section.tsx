@@ -5,11 +5,11 @@ export function DresscodeSection() {
     {
       label: 'Trắng',
       hexLabel: '#FFFFFF',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #FFF5F8 18%, #FFE8F0 48%, #FACCD8 78%, #F0A0C0 100%)',
-      highlightColor: 'rgba(255, 240, 248, 0.7)',
+      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F8F8F6 18%, #EFEFED 48%, #DCDCD8 78%, #C4C4C0 100%)',
+      highlightColor: 'rgba(235, 235, 232, 0.8)',
     },
     {
-      label: 'Xanh Blu',
+      label: 'Xanh Blue',
       hexLabel: '#A8C4E8',
       gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #DDE8F8 18%, #A8C4E8 48%, #6898D0 78%, #3868A8 100%)',
       highlightColor: 'rgba(168, 196, 232, 0.6)',
@@ -41,9 +41,9 @@ export function DresscodeSection() {
             Dress Code
           </h2>
           <div className="flex items-center justify-center gap-3 mt-2 mb-3">
-            <span className="h-px w-12 bg-primary/40" />
+            <span className="h-px w-6 bg-primary/40" />
             <span className="text-primary">❦</span>
-            <span className="h-px w-12 bg-primary/40" />
+            <span className="h-px w-6 bg-primary/40" />
           </div>
           <p className="font-serif-elegant italic text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             Để khoảnh khắc trở nên thật trọn vẹn, kính mời quý khách diện trang phục

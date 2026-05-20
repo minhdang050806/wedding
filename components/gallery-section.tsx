@@ -55,9 +55,9 @@ export function GallerySection() {
             Album of Love
           </h2>
           <div className="flex items-center justify-center gap-3 mb-2">
-            <span className="h-px w-12 bg-accent/40" />
+            <span className="h-px w-6 bg-accent/40" />
             <span className="text-accent">❦</span>
-            <span className="h-px w-12 bg-accent/40" />
+            <span className="h-px w-6 bg-accent/40" />
           </div>
           <p className="font-display italic text-base md:text-lg text-muted-foreground">
             Những khoảnh khắc quý báu được ghi lại
