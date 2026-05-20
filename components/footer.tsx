@@ -43,21 +43,7 @@ export function Footer() {
             Sự có mặt và lời chúc phúc của quý vị làm cho ngày hôm nay thêm phần ý nghĩa.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm mb-8">
-            <div className="wing-hover">
-              <div className="px-4 py-2 text-center">
-                <p className="font-luxe text-[10px] mb-2 text-white/85">Điều phối</p>
-                <p className="font-body-elegant text-base">0936 225 918</p>
-              </div>
-            </div>
-            <div className="h-12 w-px bg-white/20 self-center hidden sm:block"></div>
-            <div className="wing-hover">
-              <div className="px-4 py-2 text-center">
-                <p className="font-luxe text-[10px] mb-2 text-white/85">Email</p>
-                <p className="font-body-elegant text-base">[Email]</p>
-              </div>
-            </div>
-          </div>
+
         </div>
 
         <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-8"></div>

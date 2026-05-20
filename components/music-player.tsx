@@ -78,13 +78,13 @@ export function MusicPlayer({
 
   return (
     <>
-      <audio ref={audioRef} src={src} preload="auto" />
+      <audio ref={audioRef} src={src} preload="auto" autoPlay loop />
       <button
         type="button"
         onClick={toggle}
         aria-label={playing ? `Tạm dừng ${trackName}` : `Phát ${trackName}`}
         title={trackName}
-        className="fixed bottom-5 right-5 md:bottom-8 md:right-8 z-50
+        className="fixed bottom-5 left-5 md:bottom-8 md:left-8 z-50
                    w-12 h-12 md:w-14 md:h-14 rounded-full
                    bg-white/85 backdrop-blur-md
                    border border-primary/40
@@ -117,7 +117,7 @@ export function MusicPlayer({
 
         {/* Tooltip on hover */}
         <span
-          className="absolute right-full mr-3 top-1/2 -translate-y-1/2
+          className="absolute left-full ml-3 top-1/2 -translate-y-1/2
                      whitespace-nowrap px-3 py-1.5 rounded-full
                      bg-white/90 border border-secondary/40
                      font-luxe text-[9px] text-foreground/70

@@ -10,6 +10,7 @@ import {
 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { FloatingPetals } from '@/components/floating-petals'
+import { FireworksBackground } from '@/components/fireworks-background'
 import './globals.css'
 
 const playfairDisplay = Playfair_Display({
@@ -88,6 +89,7 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${beVietnamPro.variable} ${greatVibes.variable} ${cormorant.variable} ${cinzel.variable} ${italiana.variable} ${ebGaramond.variable}`}
     >
       <body className="font-sans antialiased bg-background text-foreground">
+        <FireworksBackground />
         {/* Global romantic petals — drifting across the whole site */}
         <FloatingPetals count={26} fixed />
         {children}
