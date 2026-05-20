@@ -108,7 +108,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
 
   if (existing && !isEditing) {
     return (
-      <section id="rsvp" className="w-full py-8 md:py-10 px-4 bg-background">
+      <section id="rsvp" className="w-full py-4 md:py-6 px-4 bg-background">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
             <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">

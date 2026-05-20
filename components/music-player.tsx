@@ -14,7 +14,6 @@ export function MusicPlayer({
 }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
-  const startedRef = useRef(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -24,38 +23,35 @@ export function MusicPlayer({
     audio.volume = 0.55;
 
     const tryPlay = async () => {
-      if (startedRef.current) return;
-      startedRef.current = true;
+      // Already playing — nothing to do
+      if (!audio.paused) return;
       try {
         await audio.play();
         setPlaying(true);
+        // Self-remove all interaction listeners after first successful play
+        window.removeEventListener('click', tryPlay);
+        window.removeEventListener('touchstart', tryPlay);
+        window.removeEventListener('scroll', tryPlay);
+        window.removeEventListener('keydown', tryPlay);
       } catch {
-        setPlaying(false);
+        // Browser blocked autoplay; will retry on next interaction
       }
     };
 
-    // Try immediately (works on iOS/Android after user interaction, or some desktop browsers)
+    // Attempt immediately — succeeds on desktop without strict autoplay policy
     tryPlay();
 
-    // Fallback: play on first user interaction anywhere on page
-    const onInteraction = () => {
-      tryPlay();
-      window.removeEventListener('click', onInteraction);
-      window.removeEventListener('touchstart', onInteraction);
-      window.removeEventListener('keydown', onInteraction);
-      window.removeEventListener('scroll', onInteraction);
-    };
-
-    window.addEventListener('click', onInteraction, { passive: true });
-    window.addEventListener('touchstart', onInteraction, { passive: true });
-    window.addEventListener('keydown', onInteraction, { passive: true });
-    window.addEventListener('scroll', onInteraction, { passive: true });
+    // Retry on first user gesture anywhere on page (mobile / strict browsers)
+    window.addEventListener('click', tryPlay, { passive: true });
+    window.addEventListener('touchstart', tryPlay, { passive: true });
+    window.addEventListener('scroll', tryPlay, { passive: true });
+    window.addEventListener('keydown', tryPlay, { passive: true });
 
     return () => {
-      window.removeEventListener('click', onInteraction);
-      window.removeEventListener('touchstart', onInteraction);
-      window.removeEventListener('keydown', onInteraction);
-      window.removeEventListener('scroll', onInteraction);
+      window.removeEventListener('click', tryPlay);
+      window.removeEventListener('touchstart', tryPlay);
+      window.removeEventListener('scroll', tryPlay);
+      window.removeEventListener('keydown', tryPlay);
     };
   }, []);
 

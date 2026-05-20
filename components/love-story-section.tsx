@@ -2,7 +2,7 @@
 
 export function LoveStorySection() {
   return (
-    <section className="relative w-full py-8 md:py-10 px-4 bg-background">
+    <section className="relative w-full py-4 md:py-6 px-4 bg-background">
       {/* Blur orb in its own overflow-hidden wrapper so it doesn't clip text */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-secondary/15 blur-3xl -z-0"></div>

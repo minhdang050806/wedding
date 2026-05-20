@@ -14,7 +14,7 @@ const WEEKS: (number | null)[][] = [
 
 export function CalendarSection() {
   return (
-    <section className="relative w-full py-8 md:py-10 px-4 bg-romantic-gradient overflow-hidden">
+    <section className="relative w-full py-4 md:py-6 px-4 bg-romantic-gradient overflow-hidden">
       <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-secondary/30 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-accent/20 blur-3xl pointer-events-none" />
 

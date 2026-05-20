@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="relative w-full py-20 px-4 text-white overflow-hidden">
+    <footer className="relative w-full py-10 px-4 text-white overflow-hidden">
       {/* Majestic gradient backdrop */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#8B2447] via-primary to-[#6B1B36]"></div>
       <div

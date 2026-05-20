@@ -23,7 +23,7 @@ export function DresscodeSection() {
   ];
 
   return (
-    <section className="relative w-full py-8 md:py-10 px-4 overflow-hidden bg-gradient-to-b from-background via-secondary/10 to-background">
+    <section className="relative w-full py-4 md:py-6 px-4 overflow-hidden bg-gradient-to-b from-background via-secondary/10 to-background">
       {/* Soft background ornaments */}
       <div className="absolute -top-16 -left-20 w-80 h-80 rounded-full bg-secondary/20 blur-3xl" />
       <div className="absolute -bottom-16 -right-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />

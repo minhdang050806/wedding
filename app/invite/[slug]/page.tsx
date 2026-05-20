@@ -35,7 +35,7 @@ function PersonalGreetingBanner({
   const minRem = len <= 10 ? 2.75 : 2.25;
 
   return (
-    <section className="relative py-10 md:py-28 px-4 text-center bg-romantic-gradient">
+    <section className="relative py-6 md:py-12 px-4 text-center bg-romantic-gradient">
       {/* Ornament container — separate so its overflow:hidden doesn't clip text */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -left-20 w-[28rem] h-[28rem] rounded-full bg-secondary/30 blur-3xl" />

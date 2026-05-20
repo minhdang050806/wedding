@@ -42,7 +42,7 @@ export function GallerySection() {
   const selectedImage = galleryImages.find((img) => img.id === selectedId);
 
   return (
-    <section className="relative w-full py-8 md:py-10 px-4 bg-majestic-gradient overflow-hidden">
+    <section className="relative w-full py-4 md:py-6 px-4 bg-majestic-gradient overflow-hidden">
       <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-secondary/20 blur-3xl" />
       <div className="absolute bottom-20 left-10 w-72 h-72 rounded-full bg-accent/15 blur-3xl" />
 

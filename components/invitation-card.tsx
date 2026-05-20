@@ -10,7 +10,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
   const trimmed = guestName?.trim();
   const greetingTarget = trimmed || 'quý khách';
   return (
-    <section className="relative w-full py-8 md:py-10 px-4 bg-romantic-gradient overflow-hidden">
+    <section className="relative w-full py-4 md:py-6 px-4 bg-romantic-gradient overflow-hidden">
       {/* Soft background ornaments */}
       <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-secondary/30 blur-3xl"></div>
       <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-accent/20 blur-3xl"></div>
