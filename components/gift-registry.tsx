@@ -29,7 +29,7 @@ export function GiftRegistry() {
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">
             Gửi quà cưới
           </h2>
-          <p className="font-display italic text-base md:text-lg text-muted-foreground">
+          <p className="font-display text-base md:text-lg text-muted-foreground">
             Cảm ơn các bạn đã chúc phúc cho ngày vui của chúng tôi
           </p>
         </div>
@@ -102,10 +102,10 @@ export function GiftRegistry() {
               </div>
             </button>
 
-            <p className="mt-8 font-display text-2xl md:text-3xl text-shimmer italic">
+            <p className="mt-8 font-display text-2xl md:text-3xl text-shimmer">
               Nhấp vào hộp quà
             </p>
-            <p className="mt-2 font-serif-elegant italic text-muted-foreground max-w-md">
+            <p className="mt-2 font-serif-elegant text-muted-foreground max-w-md">
               Bấm để mở thông tin chuyển khoản & mã QR — món quà nhỏ gửi cô dâu chú rể ✦
             </p>
           </div>
@@ -166,7 +166,7 @@ export function GiftRegistry() {
                 </div>
               </div>
 
-              <p className="font-body-elegant text-sm text-muted-foreground text-center italic">
+              <p className="font-body-elegant text-sm text-muted-foreground text-center">
                 Quét mã QR để chuyển khoản nhanh chóng
               </p>
             </div>

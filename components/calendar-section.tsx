@@ -38,7 +38,7 @@ export function CalendarSection() {
             <p className="font-luxe text-[13px] md:text-sm text-muted-foreground mb-1">
               Tháng
             </p>
-            <p className="font-display italic text-4xl md:text-5xl text-shimmer">
+            <p className="font-display text-4xl md:text-5xl text-shimmer">
               06 — 2026
             </p>
           </div>
@@ -96,7 +96,7 @@ export function CalendarSection() {
             <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
               Chủ nhật
             </p>
-            <p className="font-display italic text-2xl md:text-3xl text-foreground/85">
+            <p className="font-display text-2xl md:text-3xl text-foreground/85">
               07 . 06 . 2026
             </p>
           </div>

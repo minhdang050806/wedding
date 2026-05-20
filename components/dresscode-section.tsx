@@ -45,7 +45,7 @@ export function DresscodeSection() {
             <span className="text-primary">❦</span>
             <span className="h-px w-6 bg-primary/40" />
           </div>
-          <p className="font-serif-elegant italic text-[11px] sm:text-sm md:text-base text-muted-foreground whitespace-nowrap">
+          <p className="font-serif-elegant text-[11px] sm:text-sm md:text-base text-muted-foreground whitespace-nowrap">
             Để khoảnh khắc trở nên thật trọn vẹn, kính mời quý khách diện trang phục tông màu sau:
           </p>
         </div>

@@ -9,11 +9,9 @@ import { TimelineSection } from '@/components/timeline-section';
 import { DresscodeSection } from '@/components/dresscode-section';
 import { LoveStorySection } from '@/components/love-story-section';
 import { GallerySection } from '@/components/gallery-section';
-import { VideoSection } from '@/components/video-section';
 import { MapSection } from '@/components/map-section';
 import { Footer } from '@/components/footer';
 import { MusicPlayer } from '@/components/music-player';
-import { EntryOverlay } from '@/components/entry-overlay';
 import { ScrollReveal } from '@/components/scroll-reveal';
 
 function PersonalGreetingBanner({
@@ -82,7 +80,7 @@ function PersonalGreetingBanner({
             Allow wrapping for long names; text-wrap:balance keeps it elegant. */}
         <div className="relative">
           {salutation && (
-            <p className="font-serif-elegant italic text-2xl md:text-3xl text-foreground/70 mb-3">
+            <p className="font-serif-elegant text-2xl md:text-3xl text-foreground/70 mb-3">
               {salutation}
             </p>
           )}
@@ -109,7 +107,7 @@ function PersonalGreetingBanner({
           <span className="h-px w-8 bg-accent/40" />
         </div>
 
-        <p className="font-serif-elegant italic text-[11px] sm:text-sm md:text-base lg:text-lg text-foreground/85 whitespace-nowrap">
+        <p className="font-serif-elegant text-[11px] sm:text-sm md:text-base lg:text-lg text-foreground/85 whitespace-nowrap">
           Đến dự lễ thành hôn của chúng tôi, sự hiện diện của {salutation || 'quý khách'} là niềm vinh hạnh lớn lao.
         </p>
 
@@ -138,12 +136,10 @@ function PersonalizedInvite() {
       <ScrollReveal><TimelineSection /></ScrollReveal>
       <ScrollReveal><DresscodeSection /></ScrollReveal>
       <ScrollReveal><GallerySection /></ScrollReveal>
-      <ScrollReveal><VideoSection /></ScrollReveal>
       <ScrollReveal><RsvpForm guestKey={guestKey} guestSalutation={salutation} guestName={name} /></ScrollReveal>
       <ScrollReveal><MapSection /></ScrollReveal>
       <ScrollReveal><Footer /></ScrollReveal>
       <MusicPlayer src="/audio/mot-doi.mp3" />
-      <EntryOverlay salutation={salutation} name={name} />
     </main>
   );
 }

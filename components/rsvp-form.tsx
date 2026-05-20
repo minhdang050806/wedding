@@ -126,7 +126,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               <span className="text-accent text-xl">❦</span>
               <span className="h-px w-6 bg-accent/40" />
             </div>
-            <p className="font-display italic text-lg text-muted-foreground max-w-xl mx-auto">
+            <p className="font-display text-lg text-muted-foreground max-w-xl mx-auto">
               Sự xác nhận của {existing.guestSalutation || 'bạn'} là niềm vinh hạnh lớn
               lao của chúng tôi. Hẹn gặp trong ngày trọng đại!
             </p>
@@ -207,7 +207,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
           >
             Xác nhận tham dự
           </h2>
-          <p className="font-display italic text-lg text-muted-foreground">
+          <p className="font-display text-lg text-muted-foreground">
             Vui lòng điền form dưới đây để chúng tôi chuẩn bị tốt nhất cho ngày vui
           </p>
         </div>
@@ -251,7 +251,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                 className="rounded-lg border-border focus:border-primary focus:ring-primary/20
                            text-lg md:text-xl font-display font-medium tracking-wider py-5"
               />
-              <p className="mt-1.5 text-xs text-muted-foreground italic">
+              <p className="mt-1.5 text-xs text-muted-foreground">
                 Để chúng tôi tiện liên hệ khi có thay đổi lịch trình
               </p>
             </div>
@@ -412,7 +412,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                                  shadow-md border border-primary/40">
                   Người điều phối
                 </span>
-                <p className="font-serif-elegant text-sm text-muted-foreground italic mt-1 mb-2">
+                <p className="font-serif-elegant text-sm text-muted-foreground mt-1 mb-2">
                   Cần hỗ trợ? Vui lòng liên hệ:
                 </p>
                 <p className="font-display text-foreground text-lg md:text-xl font-medium mb-1">

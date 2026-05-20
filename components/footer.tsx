@@ -37,7 +37,7 @@ export function Footer() {
             <div className="h-px w-12 bg-white/30"></div>
           </div>
 
-          <p className="text-white/85 leading-relaxed max-w-2xl mx-auto mb-10 font-display italic text-xl">
+          <p className="text-white/85 leading-relaxed max-w-2xl mx-auto mb-10 font-display text-xl">
             Cảm ơn bạn đã là một phần trong ngày đặc biệt của chúng tôi.
             <br />
             Sự có mặt và lời chúc phúc của quý vị làm cho ngày hôm nay thêm phần ý nghĩa.
@@ -49,7 +49,7 @@ export function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-8"></div>
 
         <div className="text-center">
-          <p className="text-white/80 text-base font-display italic">
+          <p className="text-white/80 text-base font-display">
             Một ngày đặc biệt được ghi lại với tình yêu
           </p>
           <p className="text-white/50 text-xs mt-2 font-luxe">

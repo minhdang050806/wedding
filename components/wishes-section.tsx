@@ -42,7 +42,7 @@ export function WishesSection() {
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">
             Lời chúc trực tuyến
           </h2>
-          <p className="font-display italic text-base md:text-lg text-muted-foreground">
+          <p className="font-display text-base md:text-lg text-muted-foreground">
             Chia sẻ những lời chúc yêu thương của bạn
           </p>
         </div>

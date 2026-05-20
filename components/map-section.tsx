@@ -22,7 +22,7 @@ export function MapSection() {
           <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">
             {VENUE.name}
           </h2>
-          <p className="font-display italic text-base md:text-lg text-muted-foreground">
+          <p className="font-display text-base md:text-lg text-muted-foreground">
             Nơi chúng ta sẽ tạo nên những kỷ niệm đẹp
           </p>
         </div>

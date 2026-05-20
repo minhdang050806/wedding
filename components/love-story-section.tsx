@@ -61,7 +61,7 @@ export function LoveStorySection() {
               Hành trình tìm người nửa kia không luôn dễ dàng — nhưng khi gặp đúng
               người, tất cả đều trở nên có ý nghĩa.
             </p>
-            <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-4 font-body-elegant italic">
+            <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-4 font-body-elegant">
               Hãy cùng chúng tôi chia sẻ niềm vui và viết tiếp câu chuyện yêu thương ấy.
             </p>
 

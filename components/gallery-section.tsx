@@ -96,7 +96,7 @@ export function GallerySection() {
             <span className="text-accent">❦</span>
             <span className="h-px w-6 bg-accent/40" />
           </div>
-          <p className="font-display italic text-base md:text-lg text-muted-foreground">
+          <p className="font-display text-base md:text-lg text-muted-foreground">
             Cuộn nhẹ để mở từng trang ký ức
           </p>
         </div>
