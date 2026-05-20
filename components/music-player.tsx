@@ -22,26 +22,31 @@ export function MusicPlayer({
     audio.loop = true;
     audio.volume = 0.55;
 
-    const tryPlay = async () => {
-      // Already playing — nothing to do
+    // Synchronous play call — iOS Safari requires audio.play() to be called
+    // synchronously on the call stack of a user gesture event handler.
+    // Using async/await breaks this requirement and blocks autoplay on mobile.
+    const tryPlay = () => {
       if (!audio.paused) return;
-      try {
-        await audio.play();
-        setPlaying(true);
-        // Self-remove all interaction listeners after first successful play
-        window.removeEventListener('click', tryPlay);
-        window.removeEventListener('touchstart', tryPlay);
-        window.removeEventListener('scroll', tryPlay);
-        window.removeEventListener('keydown', tryPlay);
-      } catch {
-        // Browser blocked autoplay; will retry on next interaction
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise
+          .then(() => {
+            setPlaying(true);
+            window.removeEventListener('click', tryPlay);
+            window.removeEventListener('touchstart', tryPlay);
+            window.removeEventListener('scroll', tryPlay);
+            window.removeEventListener('keydown', tryPlay);
+          })
+          .catch(() => {
+            // Still blocked; next interaction will retry
+          });
       }
     };
 
-    // Attempt immediately — succeeds on desktop without strict autoplay policy
+    // Attempt immediately — succeeds on desktop
     tryPlay();
 
-    // Retry on first user gesture anywhere on page (mobile / strict browsers)
+    // Retry on first user gesture (mobile / strict autoplay browsers)
     window.addEventListener('click', tryPlay, { passive: true });
     window.addEventListener('touchstart', tryPlay, { passive: true });
     window.addEventListener('scroll', tryPlay, { passive: true });

@@ -1,33 +1,36 @@
 'use client';
 
-import { Clock } from 'lucide-react';
-
 interface TimelineItem {
   time: string;
   title: string;
   description: string;
+  icon: string;
 }
 
 const timelineEvents: TimelineItem[] = [
   {
     time: '14:00',
-    title: 'Đón khách',
-    description: 'Đón tiếp quý khách, thưởng thức Welcome Drink',
+    title: 'Đón Khách',
+    description: 'Đón tiếp quý khách, thưởng thức Welcome Drink trong không gian tràn ngập hương thơm và âm nhạc',
+    icon: '❦',
   },
   {
     time: '14:30',
     title: 'Welcome Drink',
-    description: 'Đồ uống và hors d\'oeuvres trong không gian ấm cúng',
+    description: 'Đồ uống và hors d\'oeuvres trong không gian ấm cúng, gặp gỡ và trò chuyện cùng nhau',
+    icon: '✦',
   },
   {
     time: '15:00',
-    title: 'Lễ cưới',
-    description: 'Lễ trao nhẫn, lời thề nguyện và những khoảnh khắc đặc biệt',
+    title: 'Lễ Cưới',
+    description: 'Lễ trao nhẫn, lời thề nguyện và những khoảnh khắc đặc biệt nhất trong ngày trọng đại',
+    icon: '♡',
   },
   {
     time: '16:30',
-    title: 'Tiệc thân mật',
-    description: 'Cùng chia sẻ bữa tiệc và lời chúc mừng',
+    title: 'Tiệc Thân Mật',
+    description: 'Cùng chia sẻ bữa tiệc, lời chúc mừng và những kỷ niệm đẹp bên người thân',
+    icon: '✧',
   },
 ];
 
@@ -35,81 +38,153 @@ export function TimelineSection() {
   return (
     <section className="w-full py-4 md:py-6 px-4 bg-gradient-to-b from-secondary/10 to-background">
       <div className="max-w-3xl mx-auto w-full">
-        <div className="text-center mb-6 md:mb-8 lg:mb-10">
-          <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
-            Chương trình
-          </div>
-          <h2 className="font-script text-shimmer text-5xl md:text-6xl mb-2">
+
+        {/* Header */}
+        <div className="text-center mb-8 md:mb-12">
+          <p className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">Chương trình</p>
+          <h2
+            className="font-script text-shimmer animate-glow tracking-wide"
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}
+          >
             Timeline Sự Kiện
           </h2>
-          <p className="font-display italic text-base md:text-lg text-muted-foreground">
-            Hành trình của ngày đặc biệt
-          </p>
-        </div>
-
-        {/* Timeline */}
-        <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-primary to-primary/30 transform md:-translate-x-1/2" />
-
-          <div className="space-y-4 md:space-y-5 lg:space-y-6 relative z-10">
-            {timelineEvents.map((event, index) => (
-              <div
-                key={index}
-                className={`flex gap-6 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} md:gap-0`}
-              >
-                {/* Desktop time on opposite side */}
-                <div className="flex-1 hidden md:block">
-                  {index % 2 === 0 && (
-                    <div className="text-right pr-10">
-                      <p className="text-shimmer font-display text-2xl md:text-3xl">
-                        {event.time}
-                      </p>
-                    </div>
-                  )}
-                  {index % 2 === 1 && (
-                    <div className="text-left pl-10">
-                      <p className="text-shimmer font-display text-2xl md:text-3xl">
-                        {event.time}
-                      </p>
-                    </div>
-                  )}
-                </div>
-
-                {/* Center dot */}
-                <div className="flex flex-col items-center">
-                  <div className="w-3.5 h-3.5 rounded-full bg-primary shadow-lg ring-4 ring-primary/15" />
-                </div>
-
-                {/* Card */}
-                <div className="flex-1 md:px-10">
-                  <div className="bg-white rounded-xl p-4 md:p-5 card-glow">
-                    <div className="flex items-start gap-2.5 mb-2">
-                      <Clock className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                      <div className="flex-1">
-                        <div className="md:hidden mb-1">
-                          <p className="text-primary font-display text-lg font-semibold">
-                            {event.time}
-                          </p>
-                        </div>
-                        <h3 className="font-display text-foreground text-xl md:text-2xl leading-tight">
-                          {event.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <p className="font-body-elegant text-muted-foreground text-sm md:text-base leading-snug">
-                      {event.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="flex items-center justify-center gap-3 mt-2">
+            <span className="h-px w-12 bg-accent/40" />
+            <span className="text-accent">❦</span>
+            <span className="h-px w-12 bg-accent/40" />
           </div>
         </div>
 
-        <div className="text-center mt-6 md:mt-8">
-          <div className="text-primary/30 text-2xl">✤</div>
+        {/* Timeline track */}
+        <div className="relative">
+          {/* Center vertical line */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent hidden md:block" />
+          {/* Mobile: left line */}
+          <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent md:hidden" />
+
+          <div className="space-y-0">
+            {timelineEvents.map((event, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <div key={index} className="relative">
+                  {/* ── Desktop layout (alternating) ── */}
+                  <div className="hidden md:flex items-center gap-0 min-h-[120px]">
+                    {/* Left slot */}
+                    <div className="flex-1 flex justify-end pr-8">
+                      {isLeft ? (
+                        <TimelineCard event={event} align="right" />
+                      ) : (
+                        <TimeLabel time={event.time} align="right" />
+                      )}
+                    </div>
+
+                    {/* Center node */}
+                    <TimelineNode icon={event.icon} />
+
+                    {/* Right slot */}
+                    <div className="flex-1 flex justify-start pl-8">
+                      {isLeft ? (
+                        <TimeLabel time={event.time} align="left" />
+                      ) : (
+                        <TimelineCard event={event} align="left" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* ── Mobile layout (all right of line) ── */}
+                  <div className="md:hidden flex items-start gap-4 py-3">
+                    <div className="flex flex-col items-center pt-3 flex-shrink-0">
+                      <div
+                        className="w-9 h-9 rounded-full border-2 border-primary/50 bg-white
+                                   flex items-center justify-center shadow-md z-10 relative"
+                        style={{ color: 'var(--primary)' }}
+                      >
+                        <span className="text-base leading-none">{event.icon}</span>
+                      </div>
+                      {index < timelineEvents.length - 1 && (
+                        <div className="w-px flex-1 min-h-[2rem] bg-primary/20 mt-1" />
+                      )}
+                    </div>
+                    <div className="flex-1 pb-4">
+                      <p className="font-script text-shimmer text-2xl leading-none mb-1">{event.time}</p>
+                      <h3 className="font-display text-foreground text-xl mb-1">{event.title}</h3>
+                      <p className="font-body-elegant text-muted-foreground text-sm leading-relaxed">{event.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Footer ornament */}
+        <div className="text-center mt-8 md:mt-10">
+          <div className="flex items-center justify-center gap-4">
+            <span className="h-px w-16 bg-gradient-to-r from-transparent to-accent/40" />
+            <span className="text-accent/60 text-xl">✦</span>
+            <span className="h-px w-16 bg-gradient-to-l from-transparent to-accent/40" />
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function TimelineNode({ icon }: { icon: string }) {
+  return (
+    <div className="flex-shrink-0 z-10 relative flex flex-col items-center">
+      <div
+        className="w-12 h-12 rounded-full bg-white border-2 border-primary/40
+                   shadow-[0_0_0_6px_rgba(192,104,136,0.08)]
+                   flex items-center justify-center
+                   transition-transform duration-300 hover:scale-110"
+      >
+        <span className="text-primary text-xl leading-none">{icon}</span>
+      </div>
+    </div>
+  );
+}
+
+function TimeLabel({ time, align }: { time: string; align: 'left' | 'right' }) {
+  return (
+    <div className={`${align === 'right' ? 'text-right' : 'text-left'}`}>
+      <p
+        className="font-script text-shimmer"
+        style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}
+      >
+        {time}
+      </p>
+    </div>
+  );
+}
+
+function TimelineCard({
+  event,
+  align,
+}: {
+  event: TimelineItem;
+  align: 'left' | 'right';
+}) {
+  return (
+    <div
+      className={`relative max-w-[260px] bg-white rounded-2xl p-5 card-glow border border-secondary/30
+                  hover:border-primary/30 transition-all duration-500 group
+                  ${align === 'right' ? 'text-right' : 'text-left'}`}
+    >
+      {/* Decorative corner accent */}
+      <div
+        className={`absolute top-3 ${align === 'right' ? 'right-3' : 'left-3'} w-6 h-px bg-gradient-to-r from-primary/40 to-transparent`}
+      />
+      <div
+        className={`absolute top-3 ${align === 'right' ? 'right-3' : 'left-3'} w-px h-6 bg-gradient-to-b from-primary/40 to-transparent`}
+      />
+
+      <h3 className="font-display text-foreground text-xl md:text-2xl mb-1 group-hover:text-primary transition-colors duration-300">
+        {event.title}
+      </h3>
+      <p className="font-body-elegant text-muted-foreground text-sm leading-relaxed">
+        {event.description}
+      </p>
+    </div>
   );
 }

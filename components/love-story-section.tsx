@@ -13,16 +13,16 @@ export function LoveStorySection() {
           <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-3">
             Lời tâm tình
           </div>
-          {/* Calligraphic two-line title, offset for visual rhythm */}
-          <div className="relative inline-block">
+          {/* Calligraphic two-line title — use text-align offset, no transforms */}
+          <div className="relative w-full max-w-sm mx-auto py-1">
             <h2
-              className="font-script text-shimmer leading-none block"
+              className="font-script text-shimmer text-center"
               style={{ fontSize: 'clamp(3rem, 9vw, 6rem)' }}
             >
               Beautiful
             </h2>
             <h2
-              className="font-script text-shimmer leading-none block -mt-3 md:-mt-5 md:translate-x-12 translate-x-6"
+              className="font-script text-shimmer text-right -mt-3 md:-mt-5"
               style={{ fontSize: 'clamp(2.5rem, 7.5vw, 5rem)' }}
             >
               chapter
