@@ -27,6 +27,14 @@ const TRANSPORT_OPTIONS = [
 ];
 
 function getOrCreateSessionKey(baseKey: string): string {
+  // Generic forms (not tied to a specific guest) must always get a fresh key per
+  // page load, otherwise two people registering from the same device would share
+  // the same key and the second submission would silently overwrite the first.
+  if (baseKey === 'general' || baseKey === 'anonymous') {
+    return `${baseKey}-${crypto.randomUUID()}`;
+  }
+  // Personalized invite links: cache in localStorage so the same guest can
+  // reload and update their RSVP without creating a duplicate entry.
   const storageKey = `rsvp_session_${baseKey}`;
   try {
     const existing = localStorage.getItem(storageKey);
