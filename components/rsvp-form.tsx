@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -26,9 +26,27 @@ const TRANSPORT_OPTIONS = [
   { value: 'other', label: TRANSPORT_LABELS.other },
 ];
 
+function getOrCreateSessionKey(baseKey: string): string {
+  const storageKey = `rsvp_session_${baseKey}`;
+  try {
+    const existing = localStorage.getItem(storageKey);
+    if (existing) return existing;
+    const id = `${baseKey}-${crypto.randomUUID()}`;
+    localStorage.setItem(storageKey, id);
+    return id;
+  } catch {
+    return `${baseKey}-${Date.now()}`;
+  }
+}
+
 export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps = {}) {
-  const effectiveKey =
-    guestKey || (guestName ? `${guestSalutation ?? ''}-${guestName}` : 'anonymous');
+  const baseKey = guestKey || (guestName ? `${guestSalutation ?? ''}-${guestName}` : 'anonymous');
+
+  const effectiveKey = useMemo(() => {
+    if (typeof window === 'undefined') return baseKey;
+    return getOrCreateSessionKey(baseKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [formData, setFormData] = useState({
     fullName:
@@ -94,11 +112,29 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
   if (submitted) {
     return (
       <section id="rsvp" className="w-full py-8 md:py-10 px-4 bg-background">
-        <div className="max-w-2xl mx-auto text-center">
-          <Heart className="w-8 h-8 text-accent fill-accent/40 mx-auto mb-4" />
-          <p className="font-serif-elegant italic text-foreground/80 text-xl">
-            Cảm ơn quý khách đã xác nhận tham dự!
-          </p>
+        <div className="max-w-sm mx-auto">
+          <div className="relative bg-white rounded-3xl card-glow border border-secondary/40 px-8 py-10 text-center overflow-hidden">
+            {/* Corner ornaments */}
+            <span className="absolute top-4 left-4 w-6 h-6 border-t border-l border-accent/50 pointer-events-none" />
+            <span className="absolute top-4 right-4 w-6 h-6 border-t border-r border-accent/50 pointer-events-none" />
+            <span className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-accent/50 pointer-events-none" />
+            <span className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-accent/50 pointer-events-none" />
+            {/* Soft glow */}
+            <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-40 h-40 rounded-full bg-secondary/30 blur-3xl pointer-events-none" />
+
+            <div className="relative">
+              <Heart className="w-8 h-8 text-accent fill-accent/50 mx-auto mb-5" />
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="h-px w-8 bg-accent/30" />
+                <span className="text-accent/60 text-sm">❦</span>
+                <span className="h-px w-8 bg-accent/30" />
+              </div>
+              <p className="font-script text-shimmer text-3xl mb-3">Cảm ơn quý khách</p>
+              <p className="font-serif-elegant italic text-foreground/65 text-sm leading-relaxed">
+                Sự xác nhận của quý khách là niềm hạnh phúc<br />của Phúc Tường và Ngọc Anh.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     );
