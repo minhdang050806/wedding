@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import {
   Be_Vietnam_Pro,
-  Josefin_Sans,
+  EB_Garamond,
   Cinzel,
 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
@@ -12,13 +12,14 @@ import './globals.css'
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin', 'vietnamese'],
   variable: '--font-be-vietnam',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600'],
 })
 
-const josefinSans = Josefin_Sans({
-  subsets: ['latin'],
-  variable: '--font-josefin',
-  weight: ['100', '300', '400', '600'],
+const ebGaramond = EB_Garamond({
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-eb-garamond',
+  weight: ['400', '500', '600', '800'],
+  style: ['normal', 'italic'],
 })
 
 const cinzel = Cinzel({
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${beVietnamPro.variable} ${josefinSans.variable} ${cinzel.variable}`}
+      className={`${beVietnamPro.variable} ${ebGaramond.variable} ${cinzel.variable}`}
     >
       <body className="font-sans antialiased bg-background text-foreground">
         <FireworksBackground />

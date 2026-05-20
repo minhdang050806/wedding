@@ -9,7 +9,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: 'var(--font-be-vietnam), system-ui, -apple-system, sans-serif',
-        display: 'var(--font-josefin), system-ui, sans-serif',
+        garamond: 'var(--font-eb-garamond), Georgia, serif',
         luxe: 'var(--font-cinzel), Georgia, serif',
       },
     },
