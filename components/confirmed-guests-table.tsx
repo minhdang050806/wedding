@@ -13,6 +13,8 @@ import {
 export function ConfirmedGuestsTable() {
   const { data: rsvps, refresh } = usePolled<ApiRsvp[]>(rsvpsApi.list, []);
 
+  const sorted = [...rsvps].sort((a, b) => a.submittedAt - b.submittedAt);
+
   const totalPeople = rsvps.reduce(
     (sum, r) => sum + (parseInt(r.numberOfGuests, 10) || 0),
     0,
@@ -81,11 +83,12 @@ export function ConfirmedGuestsTable() {
                     <Th>Khách của</Th>
                     <Th>Di chuyển</Th>
                     <Th>Lời nhắn</Th>
+                    <Th>Thời gian</Th>
                     <Th align="center">‎</Th>
                   </tr>
                 </thead>
                 <tbody>
-                  {rsvps.map((r, i) => (
+                  {sorted.map((r, i) => (
                     <tr
                       key={r.id}
                       className={`border-b border-secondary/15 last:border-0 transition-colors
@@ -142,6 +145,11 @@ export function ConfirmedGuestsTable() {
                           <span className="text-muted-foreground/50 text-sm">·</span>
                         )}
                       </Td>
+                      <Td>
+                        <span className="text-muted-foreground text-xs whitespace-nowrap">
+                          {formatTime(r.submittedAt)}
+                        </span>
+                      </Td>
                       <Td align="center">
                         <button
                           onClick={() => handleDelete(r)}
@@ -159,7 +167,7 @@ export function ConfirmedGuestsTable() {
             </div>
 
             <div className="md:hidden divide-y divide-secondary/20">
-              {rsvps.map((r) => (
+              {sorted.map((r) => (
                 <div key={r.id} className="p-5 space-y-3">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-start gap-2">
@@ -195,6 +203,7 @@ export function ConfirmedGuestsTable() {
                       value={GUEST_TYPE_LABELS[r.guestType] ?? r.guestType}
                     />
                     <MobileField label="Di chuyển" value={transportText(r)} />
+                    <MobileField label="Thời gian" value={formatTime(r.submittedAt)} />
                   </div>
 
                   {r.message && (
@@ -245,4 +254,14 @@ function MobileField({ label, value }: { label: string; value: string }) {
       <p className="text-foreground">{value}</p>
     </div>
   );
+}
+
+function formatTime(ts: number): string {
+  return new Date(ts).toLocaleString('vi-VN', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 }
