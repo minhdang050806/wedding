@@ -1,13 +1,7 @@
 'use client';
 
 export function DresscodeSection() {
-  const femaleColors = [
-    {
-      label: 'Be',
-      hexLabel: '#E8D5C4',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F8EDE4 18%, #E8D5C4 48%, #C8A890 78%, #A07858 100%)',
-      highlightColor: 'rgba(232, 213, 196, 0.6)',
-    },
+  const colors = [
     {
       label: 'Trắng',
       hexLabel: '#FFFFFF',
@@ -15,37 +9,16 @@ export function DresscodeSection() {
       highlightColor: 'rgba(255, 240, 248, 0.7)',
     },
     {
-      label: 'Hồng',
-      hexLabel: '#F4C2D7',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #FDE5EE 18%, #F4C2D7 48%, #D88AAB 78%, #A8527B 100%)',
-      highlightColor: 'rgba(244, 194, 215, 0.6)',
-    },
-  ];
-
-  const maleColors = [
-    {
-      label: 'Trắng',
-      hexLabel: '#F8F8FF',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F0F4FF 18%, #E0E8F8 48%, #B8C8E8 78%, #8098C8 100%)',
-      highlightColor: 'rgba(220, 232, 252, 0.65)',
+      label: 'Xanh Blu',
+      hexLabel: '#A8C4E8',
+      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #DDE8F8 18%, #A8C4E8 48%, #6898D0 78%, #3868A8 100%)',
+      highlightColor: 'rgba(168, 196, 232, 0.6)',
     },
     {
-      label: 'Xanh',
-      hexLabel: '#A8D8C8',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #D8F4EC 18%, #A8D8C8 48%, #70B8A0 78%, #389878 100%)',
-      highlightColor: 'rgba(168, 216, 200, 0.6)',
-    },
-    {
-      label: 'Blue Nhạt',
-      hexLabel: '#B8D8F0',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #DDF0FF 18%, #B8D8F0 48%, #7EB4D8 78%, #4888B0 100%)',
-      highlightColor: 'rgba(184, 216, 240, 0.6)',
-    },
-    {
-      label: 'Be',
-      hexLabel: '#E8D5C4',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F8EDE4 18%, #E8D5C4 48%, #C8A890 78%, #A07858 100%)',
-      highlightColor: 'rgba(232, 213, 196, 0.6)',
+      label: 'Hồng Nude',
+      hexLabel: '#F0B8C8',
+      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #FAE8EE 18%, #F0B8C8 48%, #D07898 78%, #A85070 100%)',
+      highlightColor: 'rgba(240, 184, 200, 0.6)',
     },
   ];
 
@@ -78,35 +51,11 @@ export function DresscodeSection() {
           </p>
         </div>
 
-        {/* Female */}
-        <div className="mb-8 md:mb-10">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-10 bg-primary/30" />
-            <p className="font-luxe text-primary text-[11px] md:text-xs tracking-widest">♀ Nữ</p>
-            <span className="h-px w-10 bg-primary/30" />
-          </div>
-          <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-8 md:gap-12">
-            {femaleColors.map((c) => (
-              <ColorSphere key={c.label} {...c} />
-            ))}
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8 md:mb-10" />
-
-        {/* Male */}
-        <div className="mb-8 md:mb-10">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-10 bg-primary/30" />
-            <p className="font-luxe text-primary text-[11px] md:text-xs tracking-widest">♂ Nam</p>
-            <span className="h-px w-10 bg-primary/30" />
-          </div>
-          <div className="flex flex-nowrap items-center justify-center gap-3 sm:gap-6 md:gap-10">
-            {maleColors.map((c) => (
-              <ColorSphere key={c.label + '-m'} {...c} />
-            ))}
-          </div>
+        {/* Single row of 3 color spheres */}
+        <div className="flex items-center justify-center gap-8 sm:gap-16 md:gap-24 mb-8 md:mb-10">
+          {colors.map((c) => (
+            <ColorSphere key={c.label} {...c} />
+          ))}
         </div>
 
         {/* Footer note */}
@@ -135,7 +84,7 @@ function ColorSphere({
   return (
     <div className="flex flex-col items-center group">
       {/* Sphere */}
-      <div className="relative w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-3 animate-float">
+      <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-3 animate-float">
         {/* Outer glow ring */}
         <div
           className="absolute inset-0 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"

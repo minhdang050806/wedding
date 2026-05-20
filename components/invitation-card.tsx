@@ -39,14 +39,14 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
           </div>
 
           {/* Card header */}
-          <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/10 px-8 py-10 text-center border-b border-secondary/30">
-            <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
+          <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/10 px-8 py-5 text-center border-b border-secondary/30">
+            <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">
               Trân trọng kính mời
             </div>
-            <h2 className="font-script text-shimmer heading-script text-5xl md:text-6xl mb-3">
+            <h2 className="font-script text-shimmer heading-script text-5xl md:text-6xl mb-1">
               Lễ Thành Hôn
             </h2>
-            <div className="flex items-center justify-center gap-3 mt-4">
+            <div className="flex items-center justify-center gap-3 mt-2">
               <span className="h-px w-12 bg-accent/40"></span>
               <span className="text-accent">❦</span>
               <span className="h-px w-12 bg-accent/40"></span>
@@ -54,15 +54,15 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
           </div>
 
           {/* Card content */}
-          <div className="px-8 py-12">
+          <div className="px-6 py-6">
             {/* Family section — each with wing-hover */}
-            <div className="grid md:grid-cols-2 gap-8 mb-10 pb-10 border-b border-secondary/30">
+            <div className="grid md:grid-cols-2 gap-3 mb-5 pb-5 border-b border-secondary/30">
               {[
                 { title: 'Nhà Trai', father: 'Ông: Lê Tuấn Quyết', mother: 'Bà: Nguyễn Kim Cúc' },
                 { title: 'Nhà Gái', father: 'Ông: Nguyễn Thế Long', mother: 'Bà: Lê Thị Hoài' },
               ].map((fam) => (
                 <div key={fam.title} className="wing-hover">
-                  <div className="text-center bg-white/60 rounded-2xl p-5 border border-secondary/20 transition-shadow duration-500 hover:shadow-lg">
+                  <div className="text-center bg-white/60 rounded-2xl p-3 border border-secondary/20 transition-shadow duration-500 hover:shadow-lg">
                     <p className="font-luxe text-gold-foil text-[10px] md:text-xs mb-3">
                       {fam.title}
                     </p>
@@ -76,7 +76,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
             </div>
 
             {/* Event details */}
-            <div className="space-y-5 mb-10">
+            <div className="space-y-2 mb-5">
               {[
                 { Icon: Calendar, label: 'Ngày cưới', value: 'Chủ nhật, 07.06.2026' },
                 {
@@ -124,14 +124,14 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
             </div>
 
             {/* Decorative line */}
-            <div className="flex items-center justify-center gap-3 my-8">
+            <div className="flex items-center justify-center gap-3 my-4">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent to-accent/40"></div>
               <span className="text-accent text-lg">❦</span>
               <div className="flex-1 h-px bg-gradient-to-l from-transparent to-accent/40"></div>
             </div>
 
             {/* Message */}
-            <p className="text-center text-foreground text-lg md:text-xl leading-relaxed mb-10 font-serif-elegant italic font-medium">
+            <p className="text-center text-foreground text-base md:text-lg leading-relaxed mb-5 font-serif-elegant italic font-medium">
               Trân trọng kính mời {greetingTarget} đến tham dự lễ cưới của chúng tôi.
               <br />
               Sự có mặt của {trimmed || 'quý vị'} sẽ làm cho ngày đặc biệt này thêm phần ý nghĩa.

@@ -55,7 +55,7 @@ export function HeroSection() {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-          style={{ filter: 'blur(3px)' }}
+          style={{ filter: 'blur(3px)', willChange: 'transform', transform: 'translateZ(0) scale(1.05)' }}
         />
         {/* Overlay — đủ tối để chữ trắng rõ ràng */}
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/55 via-stone-800/30 to-stone-900/65" />
