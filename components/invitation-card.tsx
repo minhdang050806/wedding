@@ -44,7 +44,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
           </div>
 
           {/* Card header */}
-          <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/10 px-8 py-5 text-center border-b border-secondary/30">
+          <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/10 px-4 sm:px-8 py-4 sm:py-5 text-center border-b border-secondary/30">
             <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
               Trân trọng kính mời
             </div>
@@ -70,19 +70,19 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                 <span className="absolute bottom-4 left-4 w-7 h-7 border-b border-l border-accent/55 pointer-events-none z-20" />
                 <span className="absolute bottom-4 right-4 w-7 h-7 border-b border-r border-accent/55 pointer-events-none z-20" />
 
-                <div className="px-8 py-8 text-center">
+                <div className="px-3 sm:px-8 py-5 sm:py-8 text-center">
 
                   {/* Gia đình */}
-                  <div className="grid grid-cols-2 gap-4 mb-7">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4">
                     {[
                       { title: 'Nhà Trai', father: 'Ông Lê Tuấn Quyết', mother: 'Bà Nguyễn Kim Cúc' },
                       { title: 'Nhà Gái', father: 'Ông Nguyễn Thế Long', mother: 'Bà Lê Thị Hoài' },
                     ].map((fam) => (
                       <div key={fam.title}>
-                        <p className="font-luxe text-[11px] tracking-[0.26em] text-accent/80 mb-2">{fam.title}</p>
-                        <div className="font-body-elegant text-foreground/80 text-[15px] leading-relaxed space-y-0.5">
-                          <p>{fam.father}</p>
-                          <p>{fam.mother}</p>
+                        <p className="font-luxe text-[11px] tracking-[0.26em] text-primary mb-1">{fam.title}</p>
+                        <div className="font-body-elegant text-foreground/80 text-[11px] sm:text-[15px] leading-snug space-y-0">
+                          <p className="whitespace-nowrap">{fam.father}</p>
+                          <p className="whitespace-nowrap">{fam.mother}</p>
                         </div>
                       </div>
                     ))}
@@ -91,9 +91,9 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                   <Divider />
 
                   {/* Ngày cưới */}
-                  <div className="mb-6">
-                    <p className="font-luxe text-[11px] tracking-[0.26em] text-accent/80 mb-2">Ngày cưới</p>
-                    <p className="font-body-elegant text-foreground text-[19px] leading-snug">
+                  <div className="mb-3">
+                    <p className="font-luxe text-[11px] tracking-[0.26em] text-primary mb-1">Ngày cưới</p>
+                    <p className="font-body-elegant text-foreground text-[16px] sm:text-[19px] leading-snug whitespace-nowrap">
                       Chủ nhật, 07 · 06 · 2026
                     </p>
                   </div>
@@ -101,31 +101,31 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                   <Divider />
 
                   {/* Thời gian */}
-                  <div className="mb-6">
-                    <p className="font-luxe text-[11px] tracking-[0.26em] text-accent/80 mb-3">Thời gian sự kiện</p>
-                    <div className="space-y-1.5 font-body-elegant text-foreground/85 text-[17px] leading-relaxed">
-                      <p>16:30 &nbsp;·&nbsp; Đón khách</p>
-                      <p>17:30 &nbsp;·&nbsp; Bắt đầu buổi lễ</p>
-                      <p>18:30 &nbsp;·&nbsp; Tiệc thân mật</p>
+                  <div className="mb-3">
+                    <p className="font-luxe text-[11px] tracking-[0.26em] text-primary mb-1.5">Thời gian sự kiện</p>
+                    <div className="space-y-1 font-body-elegant text-foreground/85 text-[14px] sm:text-[17px] leading-relaxed">
+                      <p className="whitespace-nowrap">16:30 &nbsp;·&nbsp; Đón khách</p>
+                      <p className="whitespace-nowrap">17:30 &nbsp;·&nbsp; Bắt đầu buổi lễ</p>
+                      <p className="whitespace-nowrap">18:30 &nbsp;·&nbsp; Tiệc thân mật</p>
                     </div>
                   </div>
 
                   <Divider />
 
                   {/* Địa điểm */}
-                  <div className="mb-7">
-                    <p className="font-luxe text-[11px] tracking-[0.26em] text-accent/80 mb-2">Địa điểm</p>
-                    <div className="flex items-center justify-center gap-2 mb-1">
+                  <div className="mb-4">
+                    <p className="font-luxe text-[11px] tracking-[0.26em] text-primary mb-1">Địa điểm</p>
+                    <div className="flex items-center justify-center gap-2 mb-0.5">
                       <MapPin className="w-4 h-4 text-primary/55 flex-shrink-0" />
-                      <p className="font-body-elegant text-foreground text-[19px]">QC Art Villa</p>
+                      <p className="font-body-elegant text-foreground text-[16px] sm:text-[19px] whitespace-nowrap">QC Art Villa</p>
                     </div>
-                    <p className="font-body-elegant text-muted-foreground text-[15px] leading-relaxed">
+                    <p className="font-body-elegant text-muted-foreground text-[13px] sm:text-[15px] leading-relaxed whitespace-nowrap">
                       Yên Bài, Huyện Ba Vì, Hà Nội
                     </p>
                   </div>
 
                   {/* Message */}
-                  <p className="font-serif-elegant text-foreground/80 text-base md:text-[17px] leading-relaxed mb-7 italic">
+                  <p className="font-serif-elegant text-foreground/80 text-base md:text-[17px] leading-relaxed mb-5 italic">
                     Trân trọng kính mời {greetingTarget} đến tham dự lễ cưới của chúng tôi.
                     Sự có mặt của {trimmed || 'quý vị'} sẽ làm cho ngày đặc biệt này thêm phần ý nghĩa.
                   </p>
@@ -164,7 +164,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
 
 function Divider() {
   return (
-    <div className="flex items-center gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-3">
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/35 to-accent/35" />
       <span className="text-accent/45 text-[10px]">✦</span>
       <div className="flex-1 h-px bg-gradient-to-l from-transparent via-accent/35 to-accent/35" />
