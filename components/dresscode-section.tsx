@@ -63,7 +63,7 @@ export function DresscodeSection() {
           <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-primary/25 pointer-events-none" />
           <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-primary/25 pointer-events-none" />
           <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-primary/25 pointer-events-none" />
-          <p className="font-serif-elegant text-foreground text-[11px] sm:text-sm md:text-base leading-relaxed whitespace-nowrap">
+          <p className="font-serif-elegant text-foreground text-sm md:text-base leading-relaxed">
             Sự đồng điệu trong sắc màu sẽ khiến những bức hình của chúng ta thêm phần lung linh ✦
           </p>
         </div>

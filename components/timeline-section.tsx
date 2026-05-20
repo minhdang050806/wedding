@@ -9,27 +9,21 @@ interface TimelineItem {
 
 const timelineEvents: TimelineItem[] = [
   {
-    time: '14:00',
+    time: '16:30',
     title: 'Đón Khách',
     description: 'Đón tiếp quý khách, thưởng thức Welcome Drink trong không gian tràn ngập hương thơm và âm nhạc',
     icon: '❦',
   },
   {
-    time: '14:30',
-    title: 'Welcome Drink',
-    description: 'Đồ uống và hors d\'oeuvres trong không gian ấm cúng, gặp gỡ và trò chuyện cùng nhau',
-    icon: '✦',
-  },
-  {
-    time: '15:00',
-    title: 'Lễ Cưới',
+    time: '17:30',
+    title: 'Bắt Đầu Buổi Lễ',
     description: 'Lễ trao nhẫn, lời thề nguyện và những khoảnh khắc đặc biệt nhất trong ngày trọng đại',
     icon: '♡',
   },
   {
-    time: '16:30',
+    time: '18:30',
     title: 'Tiệc Thân Mật',
-    description: 'Cùng chia sẻ bữa tiệc, lời chúc mừng và những kỷ niệm đẹp bên người thân',
+    description: 'Cùng chia sẻ bữa tiệc, lời chúc mừng và những kỷ niệm đẹp bên người thân và bạn bè',
     icon: '✧',
   },
 ];

@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { MapPin, Calendar, Clock } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 interface InvitationCardProps {
   guestName?: string;
@@ -84,52 +84,64 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
               ))}
             </div>
 
-            {/* Event details */}
-            <div className="space-y-2 mb-5">
-              {[
-                { Icon: Calendar, label: 'Ngày cưới', value: 'Chủ nhật, 07.06.2026' },
-                {
-                  Icon: Clock,
-                  label: 'Thời gian sự kiện',
-                  value: (
-                    <div className="text-foreground/90 space-y-1 text-base font-body-elegant">
-                      <p>• Đón khách: 14:00</p>
-                      <p>• Lễ cưới: 15:00</p>
-                      <p>• Tiệc thân mật: 16:30</p>
-                    </div>
-                  ),
-                },
-                {
-                  Icon: MapPin,
-                  label: 'Địa điểm',
-                  value: (
-                    <div className="text-foreground font-body-elegant">
-                      <p className="text-lg font-semibold">QC Art Villa</p>
-                      <p className="text-sm text-muted-foreground">
-                        2FQ2+7W, Yên Bài, Huyện Ba Vì, Hà Nội
+            {/* Event details — thiệp nhỏ elegant */}
+            <div className="mb-5">
+              {/* Gradient border wrapper */}
+              <div className="relative p-px rounded-2xl bg-gradient-to-b from-accent/50 via-accent/20 to-accent/50 shadow-[0_6px_28px_rgba(139,94,60,0.10)]">
+                <div className="relative rounded-[calc(1rem-1px)] bg-gradient-to-b from-[#FFFDF9] via-[#FFF8EE] to-[#FFFDF9] overflow-hidden">
+                  {/* Inner fine border */}
+                  <div className="absolute inset-[5px] rounded-[calc(0.75rem-1px)] border border-accent/20 pointer-events-none z-10" />
+                  {/* Corner ornaments */}
+                  <span className="absolute top-[14px] left-[14px] w-6 h-6 border-t border-l border-accent/55 pointer-events-none z-20" />
+                  <span className="absolute top-[14px] right-[14px] w-6 h-6 border-t border-r border-accent/55 pointer-events-none z-20" />
+                  <span className="absolute bottom-[14px] left-[14px] w-6 h-6 border-b border-l border-accent/55 pointer-events-none z-20" />
+                  <span className="absolute bottom-[14px] right-[14px] w-6 h-6 border-b border-r border-accent/55 pointer-events-none z-20" />
+
+                  <div className="px-10 py-7 text-center">
+                    {/* Ngày cưới */}
+                    <div className="mb-5">
+                      <p className="font-luxe text-[11px] tracking-[0.28em] text-accent/75 mb-2">Ngày cưới</p>
+                      <p className="font-body-elegant text-foreground text-xl leading-snug">
+                        Chủ nhật, 07 · 06 · 2026
                       </p>
                     </div>
-                  ),
-                },
-              ].map(({ Icon, label, value }, idx) => (
-                <div key={idx} className="wing-hover">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/40 hover:bg-secondary/15 transition-colors duration-300 group">
-                    <div className="p-2.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/40 to-accent/40" />
+                      <span className="text-accent/50 text-xs">✦</span>
+                      <div className="flex-1 h-px bg-gradient-to-l from-transparent via-accent/40 to-accent/40" />
                     </div>
-                    <div className="flex-1">
-                      <p className="font-luxe text-gold-foil text-[13px] md:text-sm mb-1">
-                        {label}
+
+                    {/* Thời gian */}
+                    <div className="mb-5">
+                      <p className="font-luxe text-[11px] tracking-[0.28em] text-accent/75 mb-3">Thời gian sự kiện</p>
+                      <div className="space-y-2 font-body-elegant text-foreground/85 text-[17px] leading-relaxed">
+                        <p>16:30 &nbsp;·&nbsp; Đón khách</p>
+                        <p>17:30 &nbsp;·&nbsp; Bắt đầu buổi lễ</p>
+                        <p>18:30 &nbsp;·&nbsp; Tiệc thân mật</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/40 to-accent/40" />
+                      <span className="text-accent/50 text-xs">✦</span>
+                      <div className="flex-1 h-px bg-gradient-to-l from-transparent via-accent/40 to-accent/40" />
+                    </div>
+
+                    {/* Địa điểm */}
+                    <div>
+                      <p className="font-luxe text-[11px] tracking-[0.28em] text-accent/75 mb-2">Địa điểm</p>
+                      <div className="flex items-center justify-center gap-2 mb-1">
+                        <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0" />
+                        <p className="font-body-elegant text-foreground text-xl">QC Art Villa</p>
+                      </div>
+                      <p className="font-body-elegant text-muted-foreground text-base leading-relaxed">
+                        Yên Bài, Huyện Ba Vì, Hà Nội
                       </p>
-                      {typeof value === 'string' ? (
-                        <p className="text-foreground font-body-elegant text-lg">{value}</p>
-                      ) : (
-                        value
-                      )}
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
 
             {/* Decorative line */}
