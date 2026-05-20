@@ -38,7 +38,7 @@ export function Footer() {
           </div>
 
           <p className="text-white/85 leading-relaxed max-w-2xl mx-auto mb-10 font-display text-xl">
-            Cảm ơn bạn đã là một phần trong ngày đặc biệt của chúng tôi.
+            Cảm ơn bạn đã là một phần trong ngày đặc biệt của Gia đình chúng tôi.
             <br />
             Sự có mặt và lời chúc phúc của quý vị làm cho ngày hôm nay thêm phần ý nghĩa.
           </p>

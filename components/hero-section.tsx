@@ -58,7 +58,7 @@ export function HeroSection() {
         </div>
 
         <p className="font-luxe text-foreground/55 text-[13px] md:text-sm mb-3 md:mb-8">
-          The Wedding of
+          Thư mời dự lễ cưới
         </p>
 
         {/* Names */}

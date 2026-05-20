@@ -54,15 +54,15 @@ export function LoveStorySection() {
             </div>
 
             <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-3 font-body-elegant">
-              Giữa những điều bình dị của cuộc sống, chúng tôi đã tìm thấy nhau, cùng
+              Giữa những điều bình dị của cuộc sống, Gia đình chúng tôi đã tìm thấy nhau, cùng
               nhau trưởng thành, sẻ chia và yêu thương.
             </p>
             <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-3 font-body-elegant">
-              Hành trình tìm người nửa kia không luôn dễ dàng — nhưng khi gặp đúng
-              người, tất cả đều trở nên có ý nghĩa.
+              Hành trình tìm kiếm nửa kia của cuộc đời chưa bao giờ là điều dễ dàng,
+              nhưng khi gặp đúng người, tất cả đều trở nên có ý nghĩa.
             </p>
             <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-4 font-body-elegant">
-              Hãy cùng chúng tôi chia sẻ niềm vui và viết tiếp câu chuyện yêu thương ấy.
+              Hãy cùng Gia đình chúng tôi chia sẻ niềm vui và viết tiếp câu chuyện yêu thương ấy.
             </p>
 
             <div className="flex justify-center mb-3">

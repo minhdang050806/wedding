@@ -31,7 +31,7 @@ export function ConfirmedGuestsTable() {
 
   const transportText = (r: ApiRsvp) => {
     if (r.transport === 'other')
-      return r.transportOther ? `Khác — ${r.transportOther}` : 'Khác';
+      return r.transportOther ? `Khác · ${r.transportOther}` : 'Khác';
     if (r.transport === 'family' && r.pickupLocation)
       return `${TRANSPORT_LABELS.family} · ${PICKUP_LOCATION_LABELS[r.pickupLocation] ?? r.pickupLocation}`;
     return TRANSPORT_LABELS[r.transport] ?? r.transport;
@@ -139,7 +139,7 @@ export function ConfirmedGuestsTable() {
                             "{r.message}"
                           </span>
                         ) : (
-                          <span className="text-muted-foreground/50 text-sm">—</span>
+                          <span className="text-muted-foreground/50 text-sm">·</span>
                         )}
                       </Td>
                       <Td align="center">

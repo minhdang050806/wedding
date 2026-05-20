@@ -100,7 +100,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
   const transportLabel =
     formData.transport === 'other'
       ? formData.transportOther.trim()
-        ? `Khác — ${formData.transportOther.trim()}`
+        ? `Khác · ${formData.transportOther.trim()}`
         : 'Khác'
       : formData.transport === 'family' && formData.pickupLocation
       ? `${TRANSPORT_LABELS.family} · ${PICKUP_LOCATION_LABELS[formData.pickupLocation] ?? formData.pickupLocation}`
@@ -128,7 +128,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             </div>
             <p className="font-display text-lg text-muted-foreground max-w-xl mx-auto">
               Sự xác nhận của {existing.guestSalutation || 'bạn'} là niềm vinh hạnh lớn
-              lao của chúng tôi. Hẹn gặp trong ngày trọng đại!
+              lao của Gia đình chúng tôi. Hẹn gặp trong ngày trọng đại!
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                 label="Di chuyển"
                 value={
                   existing.transport === 'other'
-                    ? `Khác — ${existing.transportOther || ''}`
+                    ? `Khác · ${existing.transportOther || ''}`
                     : existing.transport === 'family' && existing.pickupLocation
                     ? `${TRANSPORT_LABELS.family} · ${PICKUP_LOCATION_LABELS[existing.pickupLocation] ?? existing.pickupLocation}`
                     : TRANSPORT_LABELS[existing.transport] ?? existing.transport
@@ -208,7 +208,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             Xác nhận tham dự
           </h2>
           <p className="font-display text-lg text-muted-foreground">
-            Vui lòng điền form dưới đây để chúng tôi chuẩn bị tốt nhất cho ngày vui
+            Vui lòng điền form dưới đây để Gia đình chúng tôi chuẩn bị tốt nhất cho ngày vui
           </p>
         </div>
 
@@ -252,7 +252,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                            text-lg md:text-xl font-display font-medium tracking-wider py-5"
               />
               <p className="mt-1.5 text-xs text-muted-foreground">
-                Để chúng tôi tiện liên hệ khi có thay đổi lịch trình
+                Để Gia đình chúng tôi tiện liên hệ khi có thay đổi lịch trình
               </p>
             </div>
 

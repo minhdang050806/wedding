@@ -39,7 +39,7 @@ export function CalendarSection() {
               Tháng
             </p>
             <p className="font-display text-4xl md:text-5xl text-shimmer">
-              06 — 2026
+              06 · 2026
             </p>
           </div>
 

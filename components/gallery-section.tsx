@@ -131,7 +131,7 @@ export function GallerySection() {
                          gap-4 md:gap-6 py-5 md:py-6 px-[20vw] sm:px-[28vw] md:px-[32vw]
                          scroll-smooth no-scrollbar"
               style={{ scrollbarWidth: 'none' }}
-              aria-label="Album cuộn ngang — vuốt để xem ảnh"
+              aria-label="Album cuộn ngang · vuốt để xem ảnh"
             >
               {galleryImages.map((image, idx) => {
                 const isActive = idx === activeIdx;

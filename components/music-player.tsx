@@ -11,7 +11,7 @@ interface MusicPlayerProps {
 
 export function MusicPlayer({
   src = '/audio/mot-doi.mp3',
-  trackName = 'Một Đời — 14 Casper & Bon Nghiêm',
+  trackName = 'Một Đời · 14 Casper & Bon Nghiêm',
 }: MusicPlayerProps) {
   const [playing, setPlaying] = useState(false);
 

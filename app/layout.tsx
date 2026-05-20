@@ -29,9 +29,9 @@ const cinzel = Cinzel({
 })
 
 export const metadata: Metadata = {
-  title: 'Lê Phúc Tường & Nguyễn Ngọc Anh',
+  title: 'Thư mời tiệc cưới Lê Phúc Tường & Nguyễn Ngọc Anh',
   description:
-    'Trân trọng kính mời quý khách đến chung vui trong ngày hạnh phúc của chúng tôi',
+    'Trân trọng kính mời quý khách đến chung vui trong ngày hạnh phúc của Gia đình chúng tôi',
   generator: 'v0.app',
   icons: {
     icon: [
