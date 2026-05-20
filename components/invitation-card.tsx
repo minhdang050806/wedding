@@ -48,7 +48,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
             <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
               Trân trọng kính mời
             </div>
-            <h2 className="font-script text-shimmer heading-script text-5xl md:text-6xl mb-1">
+            <h2 className="font-script text-shimmer heading-script text-[2rem] sm:text-5xl md:text-6xl mb-1 whitespace-nowrap">
               Lễ Thành Hôn
             </h2>
             <div className="flex items-center justify-center gap-3 mt-2">

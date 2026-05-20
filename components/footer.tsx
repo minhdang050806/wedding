@@ -18,7 +18,7 @@ export function Footer() {
       <div className="relative max-w-4xl mx-auto">
         <div className="text-center mb-8">
           {/* Names — script with rose-gold gradient */}
-          <h2 className="font-script text-rose-gold text-6xl md:text-7xl mb-1 leading-none">
+          <h2 className="font-script text-rose-gold text-[2.4rem] sm:text-6xl md:text-7xl mb-1 leading-none whitespace-nowrap">
             Phúc Tường
           </h2>
           <div className="flex items-center justify-center gap-3 my-3">
@@ -26,7 +26,7 @@ export function Footer() {
             <span className="font-script text-rose-gold text-3xl">&amp;</span>
             <span className="h-px w-10 bg-white/40"></span>
           </div>
-          <h2 className="font-script text-rose-gold text-6xl md:text-7xl mb-6 leading-none">
+          <h2 className="font-script text-rose-gold text-[2.4rem] sm:text-6xl md:text-7xl mb-6 leading-none whitespace-nowrap">
             Ngọc Anh
           </h2>
 
