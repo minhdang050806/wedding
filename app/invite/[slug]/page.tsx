@@ -144,7 +144,7 @@ function PersonalizedInvite() {
       <ScrollReveal><MapSection /></ScrollReveal>
       <ScrollReveal><Footer /></ScrollReveal>
       <MusicPlayer src="/audio/mot-doi.mp3" />
-      <EntryOverlay />
+      <EntryOverlay salutation={salutation} name={name} />
     </main>
   );
 }
