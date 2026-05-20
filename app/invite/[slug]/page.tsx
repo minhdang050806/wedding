@@ -109,9 +109,8 @@ function PersonalGreetingBanner({
           <span className="h-px w-8 bg-accent/40" />
         </div>
 
-        <p className="font-serif-elegant italic text-base md:text-xl text-foreground/85 max-w-xl mx-auto">
-          Đến dự lễ thành hôn của chúng tôi — sự hiện diện của {salutation || 'quý khách'}{' '}
-          là niềm vinh hạnh lớn lao.
+        <p className="font-serif-elegant italic text-[11px] sm:text-sm md:text-base lg:text-lg text-foreground/85 whitespace-nowrap">
+          Đến dự lễ thành hôn của chúng tôi, sự hiện diện của {salutation || 'quý khách'} là niềm vinh hạnh lớn lao.
         </p>
 
         {/* SR-only full label for accessibility */}

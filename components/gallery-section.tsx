@@ -128,7 +128,7 @@ export function GallerySection() {
             <div
               ref={scrollerRef}
               className="parchment relative flex overflow-x-auto snap-x snap-mandatory
-                         gap-6 md:gap-10 py-8 md:py-10 px-[20vw] sm:px-[28vw] md:px-[32vw]
+                         gap-4 md:gap-6 py-5 md:py-6 px-[20vw] sm:px-[28vw] md:px-[32vw]
                          scroll-smooth no-scrollbar"
               style={{ scrollbarWidth: 'none' }}
               aria-label="Album cuộn ngang — vuốt để xem ảnh"
@@ -139,8 +139,8 @@ export function GallerySection() {
                   <div
                     key={image.id}
                     data-slide
-                    className="snap-center shrink-0 flex flex-col items-center"
-                    style={{ width: 'min(78vw, 360px)' }}
+                    className="snap-center shrink-0"
+                    style={{ width: 'min(68vw, 300px)' }}
                   >
                     {/* Photo frame */}
                     <button
@@ -148,22 +148,19 @@ export function GallerySection() {
                       aria-label={`Mở ảnh: ${image.caption ?? image.alt}`}
                       className={`group relative block w-full aspect-[3/4] rounded-sm overflow-hidden
                                   transition-all duration-700 ease-out
-                                  ${isActive
-                                    ? 'scale-100 opacity-100'
-                                    : 'scale-90 opacity-55'}
-                                 `}
+                                  ${isActive ? 'scale-100 opacity-100' : 'scale-88 opacity-50'}`}
                       style={{
                         boxShadow: isActive
-                          ? '0 30px 60px -25px rgba(74,47,26,0.55), 0 14px 30px -18px rgba(74,47,26,0.45), inset 0 0 0 1px rgba(201,169,110,0.5)'
-                          : '0 12px 28px -16px rgba(74,47,26,0.4), inset 0 0 0 1px rgba(201,169,110,0.35)',
+                          ? '0 24px 50px -20px rgba(74,47,26,0.55), 0 10px 24px -14px rgba(74,47,26,0.40), inset 0 0 0 1px rgba(201,169,110,0.5)'
+                          : '0 8px 20px -12px rgba(74,47,26,0.35), inset 0 0 0 1px rgba(201,169,110,0.30)',
                         transform: isActive
                           ? 'rotate(0deg) scale(1)'
-                          : `rotate(${idx % 2 === 0 ? '-1.5' : '1.5'}deg) scale(0.9)`,
+                          : `rotate(${idx % 2 === 0 ? '-1.5' : '1.5'}deg) scale(0.88)`,
                       }}
                     >
                       {/* Gold inner frame */}
                       <span className="pointer-events-none absolute inset-2 border border-[#C9A96E]/55 z-10" />
-                      <span className="pointer-events-none absolute inset-3 border border-[#C9A96E]/25 z-10" />
+                      <span className="pointer-events-none absolute inset-[10px] border border-[#C9A96E]/22 z-10" />
 
                       <img
                         src={image.src}
@@ -172,38 +169,25 @@ export function GallerySection() {
                         draggable={false}
                       />
 
-                      {/* Vintage warm tone wash */}
+                      {/* Vintage warm vignette */}
                       <span
                         className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-25"
                         style={{
                           background:
-                            'radial-gradient(ellipse at center, transparent 50%, rgba(74,47,26,0.45) 100%)',
+                            'radial-gradient(ellipse at center, transparent 45%, rgba(74,47,26,0.5) 100%)',
                         }}
                       />
 
                       {/* Expand hint on hover */}
                       <span
                         className="absolute bottom-3 right-3 z-20 inline-flex items-center justify-center
-                                   w-9 h-9 rounded-full bg-[#FFF8EE]/85 backdrop-blur-sm
+                                   w-8 h-8 rounded-full bg-[#FFF8EE]/85 backdrop-blur-sm
                                    text-[#4A2F1A] shadow-md
                                    opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       >
-                        <Expand className="w-4 h-4" />
+                        <Expand className="w-3.5 h-3.5" />
                       </span>
                     </button>
-
-                    {/* Caption */}
-                    <div
-                      className={`mt-5 text-center transition-all duration-500
-                                  ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
-                    >
-                      <p className="font-luxe text-[11px] text-gold-foil tracking-[0.28em] mb-1">
-                        {String(idx + 1).padStart(2, '0')} / {String(galleryImages.length).padStart(2, '0')}
-                      </p>
-                      <p className="font-display italic text-foreground text-base md:text-lg">
-                        {image.caption ?? image.alt}
-                      </p>
-                    </div>
                   </div>
                 );
               })}

@@ -94,8 +94,8 @@ export function HeroSection() {
         <div className="flex items-center justify-center gap-4 my-2 md:my-6">
           <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-white/40 to-white/40" />
           <span
-            className="font-script text-white/70 leading-none"
-            style={{ fontSize: 'clamp(1.5rem, 6vw, 4rem)' }}
+            className="font-script text-white/70"
+            style={{ fontSize: 'clamp(1.5rem, 6vw, 4rem)', lineHeight: 1 }}
           >
             &amp;
           </span>

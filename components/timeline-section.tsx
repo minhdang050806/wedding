@@ -106,7 +106,7 @@ export function TimelineSection() {
                       )}
                     </div>
                     <div className="flex-1 pb-4">
-                      <p className="font-script text-shimmer text-2xl leading-none mb-1">{event.time}</p>
+                      <p className="font-script text-shimmer text-2xl mb-1">{event.time}</p>
                       <h3 className="font-display text-foreground text-xl mb-1">{event.title}</h3>
                       <p className="font-body-elegant text-muted-foreground text-sm leading-relaxed">{event.description}</p>
                     </div>
