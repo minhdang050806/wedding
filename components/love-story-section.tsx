@@ -13,21 +13,15 @@ export function LoveStorySection() {
           <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-3">
             Lời tâm tình
           </div>
-          {/* Calligraphic two-line title — use text-align offset, no transforms */}
-          <div className="relative w-full max-w-sm mx-auto py-1">
-            <h2
-              className="font-script text-shimmer text-center"
-              style={{ fontSize: 'clamp(3rem, 9vw, 6rem)' }}
-            >
-              Beautiful
-            </h2>
-            <h2
-              className="font-script text-shimmer text-right -mt-3 md:-mt-5"
-              style={{ fontSize: 'clamp(2.5rem, 7.5vw, 5rem)' }}
-            >
-              chapter
-            </h2>
-          </div>
+          <h2
+            className="font-script text-shimmer"
+            style={{
+              fontSize: 'clamp(2.2rem, 7.5vw, 5.5rem)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Beautiful chapter
+          </h2>
           <div className="flex items-center justify-center gap-3 mt-5">
             <span className="h-px w-12 bg-accent/40" />
             <span className="text-accent">❦</span>

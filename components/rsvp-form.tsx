@@ -114,7 +114,10 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
               Đã xác nhận tham dự
             </div>
-            <h2 className="font-script text-shimmer text-6xl md:text-7xl mb-4">
+            <h2
+              className="font-script text-shimmer mb-4"
+              style={{ fontSize: 'clamp(2rem, 7vw, 4.5rem)' }}
+            >
               Cảm ơn {existing.guestSalutation || ''}{' '}
               {existing.guestName || existing.fullName}!
             </h2>
@@ -194,7 +197,10 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
           <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
             Phần đăng ký khách mời
           </div>
-          <h2 className="font-script text-shimmer text-6xl md:text-7xl mb-4">
+          <h2
+            className="font-script text-shimmer mb-4"
+            style={{ fontSize: 'clamp(2rem, 7vw, 4.5rem)', whiteSpace: 'nowrap' }}
+          >
             Xác nhận tham dự
           </h2>
           <p className="font-display italic text-lg text-muted-foreground">
