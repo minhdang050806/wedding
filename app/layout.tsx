@@ -20,7 +20,7 @@ const playfairDisplay = Playfair_Display({
 })
 
 const beVietnamPro = Be_Vietnam_Pro({
-  subsets: ['latin'],
+  subsets: ['latin', 'vietnamese'],
   variable: '--font-be-vietnam',
   weight: ['300', '400', '500', '600', '700'],
 })
