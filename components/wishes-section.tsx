@@ -33,7 +33,7 @@ export function WishesSection() {
   };
 
   return (
-    <section className="w-full py-12 md:py-14 lg:py-16 px-4 bg-background lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+    <section className="w-full py-8 md:py-10 px-4 bg-background">
       <div className="max-w-3xl mx-auto w-full">
         <div className="text-center mb-6 md:mb-8">
           <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-2">

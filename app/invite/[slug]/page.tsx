@@ -15,6 +15,7 @@ import { MapSection } from '@/components/map-section';
 import { Footer } from '@/components/footer';
 import { CalendarSection } from '@/components/calendar-section';
 import { MusicPlayer } from '@/components/music-player';
+import { ScrollReveal } from '@/components/scroll-reveal';
 
 function PersonalGreetingBanner({
   salutation,
@@ -133,18 +134,18 @@ function PersonalizedInvite() {
   return (
     <main className="w-full overflow-hidden">
       <HeroSection />
-      <PersonalGreetingBanner salutation={salutation} name={name} />
-      <LoveStorySection />
-      <InvitationCard guestName={fullLabel} />
-      <CalendarSection />
-      <TimelineSection />
-      <DresscodeSection />
-      <GallerySection />
-      <VideoSection />
-      <WishesSection />
-      <RsvpForm guestKey={guestKey} guestSalutation={salutation} guestName={name} />
-      <MapSection />
-      <Footer />
+      <ScrollReveal><PersonalGreetingBanner salutation={salutation} name={name} /></ScrollReveal>
+      <ScrollReveal><LoveStorySection /></ScrollReveal>
+      <ScrollReveal><InvitationCard guestName={fullLabel} /></ScrollReveal>
+      <ScrollReveal><CalendarSection /></ScrollReveal>
+      <ScrollReveal><TimelineSection /></ScrollReveal>
+      <ScrollReveal><DresscodeSection /></ScrollReveal>
+      <ScrollReveal><GallerySection /></ScrollReveal>
+      <ScrollReveal><VideoSection /></ScrollReveal>
+      <ScrollReveal><WishesSection /></ScrollReveal>
+      <ScrollReveal><RsvpForm guestKey={guestKey} guestSalutation={salutation} guestName={name} /></ScrollReveal>
+      <ScrollReveal><MapSection /></ScrollReveal>
+      <ScrollReveal><Footer /></ScrollReveal>
       <MusicPlayer src="/audio/mot-doi.mp3" />
     </main>
   );

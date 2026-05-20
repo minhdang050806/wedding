@@ -108,7 +108,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
 
   if (existing && !isEditing) {
     return (
-      <section id="rsvp" className="w-full py-12 md:py-14 lg:py-16 px-4 bg-background lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+      <section id="rsvp" className="w-full py-8 md:py-10 px-4 bg-background">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
             <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
@@ -188,7 +188,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
   }
 
   return (
-    <section id="rsvp" className="w-full py-20 px-4 bg-background">
+    <section id="rsvp" className="w-full py-8 md:py-10 px-4 bg-background">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <div className="font-luxe text-gold-foil text-[11px] md:text-xs mb-4">
@@ -380,6 +380,14 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                   {isEditing ? 'Cập nhật xác nhận' : 'Xác nhận tham dự'}
                 </Button>
               </div>
+            </div>
+
+            <div className="pt-4 border-t border-secondary/20 text-center">
+              <p className="text-xs text-muted-foreground">Cần hỗ trợ? Liên hệ ban tổ chức:</p>
+              <p className="text-sm font-semibold text-foreground/80 mt-0.5">Ms. Hạnh — BAN TỔ CHỨC</p>
+              <a href="tel:0936225918" className="text-sm font-semibold text-primary hover:underline">
+                0936 225 918
+              </a>
             </div>
           </div>
         </form>

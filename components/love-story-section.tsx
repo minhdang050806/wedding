@@ -2,7 +2,7 @@
 
 export function LoveStorySection() {
   return (
-    <section className="relative w-full py-12 md:py-14 lg:py-16 px-4 bg-background overflow-hidden lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+    <section className="relative w-full py-8 md:py-10 px-4 bg-background overflow-hidden">
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-secondary/15 blur-3xl -z-0"></div>
 
       <div className="relative max-w-5xl mx-auto w-full">
