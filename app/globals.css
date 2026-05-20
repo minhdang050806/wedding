@@ -95,7 +95,7 @@
   --font-script: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
   --font-serif: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
   --font-display: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
-  --font-luxe: var(--font-cinzel), 'Cinzel', serif;
+  --font-luxe: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
   --font-body: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -179,11 +179,11 @@
     line-height: 1.6;
   }
 
-  /* Luxury labels — Cinzel roman capitals, đối lập đẹp với Garamond */
+  /* Luxury labels — EB Garamond uppercase, hỗ trợ tiếng Việt */
   .font-luxe {
-    font-family: var(--font-cinzel), 'Cinzel', serif;
-    font-weight: 400;
-    letter-spacing: 0.28em;
+    font-family: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.22em;
     font-style: normal;
     text-transform: uppercase;
   }
