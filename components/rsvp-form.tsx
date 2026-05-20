@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,8 +11,8 @@ import {
   AlertDialogDescription,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { Heart, CheckCircle2, Pencil } from 'lucide-react';
-import { ApiRsvp, PICKUP_LOCATION_LABELS, PICKUP_LOCATION_OPTIONS, TRANSPORT_LABELS, rsvpsApi } from '@/lib/api';
+import { Heart } from 'lucide-react';
+import { PICKUP_LOCATION_LABELS, PICKUP_LOCATION_OPTIONS, TRANSPORT_LABELS, rsvpsApi } from '@/lib/api';
 
 interface RsvpFormProps {
   guestKey?: string;
@@ -43,23 +43,9 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
   });
 
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [existing, setExisting] = useState<ApiRsvp | null>(null);
-  const [isEditing, setIsEditing] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    rsvpsApi
-      .getByKey(effectiveKey)
-      .then((r) => {
-        if (!cancelled && r) setExisting(r);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [effectiveKey]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -81,15 +67,14 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
     setSubmitting(true);
     setErrorMsg(null);
     try {
-      const rsvp = await rsvpsApi.upsert({
+      await rsvpsApi.upsert({
         guestKey: effectiveKey,
         guestSalutation,
         guestName,
         ...formData,
       });
-      setExisting(rsvp);
+      setSubmitted(true);
       setShowConfirmation(false);
-      setIsEditing(false);
     } catch (e) {
       setErrorMsg(e instanceof Error ? e.message : 'Gửi không thành công');
     } finally {
@@ -106,89 +91,14 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
       ? `${TRANSPORT_LABELS.family} · ${PICKUP_LOCATION_LABELS[formData.pickupLocation] ?? formData.pickupLocation}`
       : TRANSPORT_LABELS[formData.transport] ?? '';
 
-  if (existing && !isEditing) {
+  if (submitted) {
     return (
-      <section id="rsvp" className="w-full py-4 md:py-6 px-4 bg-background">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-4">
-              Đã xác nhận tham dự
-            </div>
-            <h2
-              className="font-script text-shimmer mb-4"
-              style={{ fontSize: 'clamp(2rem, 7vw, 4.5rem)' }}
-            >
-              Cảm ơn {existing.guestSalutation || ''}{' '}
-              {existing.guestName || existing.fullName}!
-            </h2>
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="h-px w-6 bg-accent/40" />
-              <span className="text-accent text-xl">❦</span>
-              <span className="h-px w-6 bg-accent/40" />
-            </div>
-            <p className="font-display text-lg text-muted-foreground max-w-xl mx-auto">
-              Sự xác nhận của {existing.guestSalutation || 'bạn'} là niềm vinh hạnh lớn
-              lao của Phúc Tường và Ngọc Anh. Hẹn gặp trong ngày trọng đại!
-            </p>
-          </div>
-
-          <div className="relative bg-white rounded-3xl card-glow border border-secondary/40 p-8 md:p-10 overflow-hidden">
-            <span className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/20 pointer-events-none z-10" />
-            <span className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/20 pointer-events-none z-10" />
-            <span className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/20 pointer-events-none z-10" />
-            <span className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/20 pointer-events-none z-10" />
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-secondary/20 blur-3xl pointer-events-none" />
-
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <CheckCircle2 className="w-8 h-8 text-primary" />
-              <Heart className="w-6 h-6 text-accent fill-accent/40" />
-            </div>
-
-            <div className="space-y-3 text-foreground font-body-elegant text-base max-w-md mx-auto">
-              <Row label="Họ và tên" value={existing.fullName} />
-              <Row label="Số điện thoại" value={existing.phone} />
-              <Row label="Số người" value={`${existing.numberOfGuests} người`} />
-              <Row
-                label="Di chuyển"
-                value={
-                  existing.transport === 'other'
-                    ? `Khác · ${existing.transportOther || ''}`
-                    : existing.transport === 'family' && existing.pickupLocation
-                    ? `${TRANSPORT_LABELS.family} · ${PICKUP_LOCATION_LABELS[existing.pickupLocation] ?? existing.pickupLocation}`
-                    : TRANSPORT_LABELS[existing.transport] ?? existing.transport
-                }
-              />
-              {existing.message && (
-                <Row label="Lời nhắn" value={existing.message} multiline />
-              )}
-            </div>
-
-            <div className="flex justify-center mt-8">
-              <div className="wing-hover">
-                <button
-                  onClick={() => {
-                    setFormData({
-                      fullName: existing.fullName,
-                      phone: existing.phone,
-                      numberOfGuests: existing.numberOfGuests,
-                      guestType: existing.guestType,
-                      transport: existing.transport,
-                      transportOther: existing.transportOther || '',
-                      pickupLocation: existing.pickupLocation || '',
-                      message: existing.message || '',
-                    });
-                    setIsEditing(true);
-                  }}
-                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full
-                             font-luxe text-[13px] text-muted-foreground border border-border
-                             hover:text-primary hover:border-primary/50 transition-all"
-                >
-                  <Pencil className="w-3.5 h-3.5" />
-                  Chỉnh sửa thông tin
-                </button>
-              </div>
-            </div>
-          </div>
+      <section id="rsvp" className="w-full py-8 md:py-10 px-4 bg-background">
+        <div className="max-w-2xl mx-auto text-center">
+          <Heart className="w-8 h-8 text-accent fill-accent/40 mx-auto mb-4" />
+          <p className="font-serif-elegant italic text-foreground/80 text-xl">
+            Cảm ơn quý khách đã xác nhận tham dự!
+          </p>
         </div>
       </section>
     );
@@ -379,26 +289,13 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
               />
             </div>
 
-            <div className="flex gap-3">
-              {isEditing && (
-                <div className="wing-hover">
-                  <Button
-                    type="button"
-                    onClick={() => setIsEditing(false)}
-                    className="bg-muted text-foreground hover:bg-muted/80"
-                  >
-                    Hủy
-                  </Button>
-                </div>
-              )}
-              <div className="wing-hover flex-1">
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-luxe text-xs py-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  {isEditing ? 'Cập nhật xác nhận' : 'Xác nhận tham dự'}
-                </Button>
-              </div>
+            <div className="wing-hover">
+              <Button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-luxe text-xs py-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Xác nhận tham dự
+              </Button>
             </div>
 
             <div className="mt-6 pt-6 border-t border-border">
@@ -514,32 +411,5 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
         </AlertDialogContent>
       </AlertDialog>
     </section>
-  );
-}
-
-function Row({
-  label,
-  value,
-  multiline,
-}: {
-  label: string;
-  value: string;
-  multiline?: boolean;
-}) {
-  return (
-    <div
-      className={`flex ${
-        multiline ? 'flex-col gap-1' : 'justify-between gap-4'
-      } pb-3 border-b border-secondary/20 last:border-0`}
-    >
-      <span className="font-luxe text-[13px] text-gold-foil whitespace-nowrap">
-        {label}
-      </span>
-      <span
-        className={`text-foreground ${multiline ? '' : 'text-right'} font-medium`}
-      >
-        {value}
-      </span>
-    </div>
   );
 }
