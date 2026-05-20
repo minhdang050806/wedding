@@ -407,8 +407,9 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                            border border-accent/30 px-5 py-5 md:px-6 md:py-6 text-center shadow-sm"
               >
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2
-                                 bg-card border border-accent/40 rounded-full px-3 py-0.5
-                                 font-luxe text-[10px] text-gold-foil whitespace-nowrap">
+                                 bg-primary text-primary-foreground rounded-full px-4 py-1
+                                 font-luxe text-[11px] tracking-[0.18em] whitespace-nowrap
+                                 shadow-md border border-primary/40">
                   Người điều phối
                 </span>
                 <p className="font-serif-elegant text-sm text-muted-foreground italic mt-1 mb-2">

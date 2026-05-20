@@ -3,22 +3,22 @@
 export function DresscodeSection() {
   const colors = [
     {
-      label: 'Kem · Be',
-      hexLabel: '#F2E2C8',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #FFF8EE 18%, #F2E2C8 48%, #D4B896 78%, #8B5E3C 100%)',
-      highlightColor: 'rgba(242, 226, 200, 0.7)',
+      label: 'Trắng',
+      hexLabel: '#FFFFFF',
+      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F8F8F6 18%, #EFEFED 48%, #DCDCD8 78%, #C4C4C0 100%)',
+      highlightColor: 'rgba(235, 235, 232, 0.8)',
     },
     {
-      label: 'Champagne',
-      hexLabel: '#C9A96E',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F0E0BC 18%, #C9A96E 48%, #A8854B 78%, #6B4A28 100%)',
-      highlightColor: 'rgba(201, 169, 110, 0.65)',
+      label: 'Xanh Blue',
+      hexLabel: '#A8C4E8',
+      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #DDE8F8 18%, #A8C4E8 48%, #6898D0 78%, #3868A8 100%)',
+      highlightColor: 'rgba(168, 196, 232, 0.6)',
     },
     {
-      label: 'Hồng Đất',
-      hexLabel: '#C8917A',
-      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #F9EAE1 18%, #E0B8A8 48%, #C8917A 78%, #8B5E48 100%)',
-      highlightColor: 'rgba(200, 145, 122, 0.6)',
+      label: 'Hồng Nude',
+      hexLabel: '#F0B8C8',
+      gradient: 'radial-gradient(circle at 32% 28%, #FFFFFF 0%, #FAE8EE 18%, #F0B8C8 48%, #D07898 78%, #A85070 100%)',
+      highlightColor: 'rgba(240, 184, 200, 0.6)',
     },
   ];
 
@@ -45,9 +45,8 @@ export function DresscodeSection() {
             <span className="text-primary">❦</span>
             <span className="h-px w-6 bg-primary/40" />
           </div>
-          <p className="font-serif-elegant italic text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
-            Để khoảnh khắc trở nên thật trọn vẹn, kính mời quý khách diện trang phục
-            tông màu sau:
+          <p className="font-serif-elegant italic text-[11px] sm:text-sm md:text-base text-muted-foreground whitespace-nowrap">
+            Để khoảnh khắc trở nên thật trọn vẹn, kính mời quý khách diện trang phục tông màu sau:
           </p>
         </div>
 
