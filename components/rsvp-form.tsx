@@ -128,7 +128,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             </div>
             <p className="font-display text-lg text-muted-foreground max-w-xl mx-auto">
               Sự xác nhận của {existing.guestSalutation || 'bạn'} là niềm vinh hạnh lớn
-              lao của Gia đình chúng tôi. Hẹn gặp trong ngày trọng đại!
+              lao của Phúc Tường và Ngọc Anh. Hẹn gặp trong ngày trọng đại!
             </p>
           </div>
 
@@ -208,7 +208,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
             Xác nhận tham dự
           </h2>
           <p className="font-display text-lg text-muted-foreground">
-            Vui lòng điền form dưới đây để Gia đình chúng tôi chuẩn bị tốt nhất cho ngày vui
+            Vui lòng điền form dưới đây để Phúc Tường và Ngọc Anh chuẩn bị tốt nhất cho ngày vui
           </p>
         </div>
 
@@ -252,7 +252,7 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                            text-lg md:text-xl font-display font-medium tracking-wider py-5"
               />
               <p className="mt-1.5 text-xs text-muted-foreground">
-                Để Gia đình chúng tôi tiện liên hệ khi có thay đổi lịch trình
+                Để Phúc Tường và Ngọc Anh tiện liên hệ khi có thay đổi lịch trình
               </p>
             </div>
 

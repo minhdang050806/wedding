@@ -30,7 +30,7 @@ export function GiftRegistry() {
             Gửi quà cưới
           </h2>
           <p className="font-display text-base md:text-lg text-muted-foreground">
-            Cảm ơn các bạn đã chúc phúc cho ngày vui của Gia đình chúng tôi
+            Cảm ơn các bạn đã chúc phúc cho ngày vui của Phúc Tường và Ngọc Anh
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export function GiftRegistry() {
 
               <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
                 <p className="text-xs text-muted-foreground">
-                  💡 Gợi ý: Ghi rõ tên của bạn trong nội dung chuyển khoản để Gia đình chúng tôi có thể
+                  💡 Gợi ý: Ghi rõ tên của bạn trong nội dung chuyển khoản để Phúc Tường và Ngọc Anh có thể
                   cảm ơn bạn
                 </p>
               </div>
