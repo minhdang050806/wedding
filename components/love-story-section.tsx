@@ -54,8 +54,8 @@ export function LoveStorySection() {
             </div>
 
             <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-3 font-body-elegant">
-              Giữa những điều bình dị của cuộc sống, Phúc Tường và Ngọc Anh đã tìm thấy nhau,
-              cùng nhau trưởng thành, sẻ chia và yêu thương.
+              Giữa những điều bình dị của cuộc sống, Phúc Tường và Ngọc Anh đã tìm thấy nhau, cùng nhau<br />
+              trưởng thành, sẻ chia và yêu thương.
             </p>
             <p className="text-center text-sm md:text-base text-foreground/75 leading-relaxed mb-3 font-body-elegant">
               Hành trình tìm kiếm nửa kia của cuộc đời chưa bao giờ là điều dễ dàng,
