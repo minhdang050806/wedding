@@ -119,8 +119,8 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
                       <MapPin className="w-4 h-4 text-primary/55 flex-shrink-0" />
                       <p className="font-body-elegant text-foreground text-[16px] sm:text-[19px] whitespace-nowrap">QC Art Villa</p>
                     </div>
-                    <p className="font-body-elegant text-muted-foreground text-[13px] sm:text-[15px] leading-relaxed whitespace-nowrap">
-                      Yên Bài, Huyện Ba Vì, Hà Nội
+                    <p className="font-body-elegant text-muted-foreground text-[13px] sm:text-[15px] leading-relaxed">
+                      Yên Bài, Hà Nội
                     </p>
                   </div>
 

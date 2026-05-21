@@ -63,7 +63,7 @@ export function HeroSection() {
 
         {/* Names */}
         <h1
-          className="font-script text-shimmer animate-glow tracking-wide whitespace-nowrap mb-1 md:mb-2 uppercase"
+          className="font-script text-shimmer animate-glow tracking-wide mb-1 md:mb-2 uppercase"
           style={{ fontSize: 'clamp(2rem, 9vw, 6rem)' }}
         >
           Lê Phúc Tường
@@ -81,7 +81,7 @@ export function HeroSection() {
         </div>
 
         <h2
-          className="font-script text-shimmer animate-glow tracking-wide whitespace-nowrap mb-4 md:mb-10 uppercase"
+          className="font-script text-shimmer animate-glow tracking-wide mb-4 md:mb-10 uppercase"
           style={{ fontSize: 'clamp(1.8rem, 8.5vw, 6rem)' }}
         >
           Nguyễn Ngọc Anh

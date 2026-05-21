@@ -5,7 +5,7 @@ import { MapPin, Navigation } from 'lucide-react';
 const VENUE = {
   name: 'QC ART Village',
   addressLine: 'Số 30 ngõ 22, Đường Quảng Phúc 9 Yên Bài - Hà Nội',
-  district: 'Huyện Ba Vì, Hà Nội, Việt Nam',
+  district: 'Yên Bài, Hà Nội, Việt Nam',
   mapsLink: 'https://maps.app.goo.gl/3973we9cFsajuSMVA',
   embedSrc:
     'https://www.google.com/maps?q=2FQ2%2B7W%2C+Y%C3%AAn+B%C3%A0i%2C+H%C3%A0+N%E1%BB%99i&output=embed',
