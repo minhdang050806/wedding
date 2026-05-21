@@ -33,6 +33,26 @@ export const metadata: Metadata = {
   description:
     'Trân trọng kính mời quý khách đến chung vui trong ngày hạnh phúc của Phúc Tường và Ngọc Anh',
   generator: 'v0.app',
+  openGraph: {
+    title: 'Thư mời tiệc cưới Lê Phúc Tường & Nguyễn Ngọc Anh',
+    description: 'Trân trọng kính mời quý khách đến chung vui trong ngày hạnh phúc của Phúc Tường và Ngọc Anh',
+    images: [
+      {
+        url: '/images/wedding-1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Thiệp cưới Phúc Tường & Ngọc Anh',
+      },
+    ],
+    type: 'website',
+    locale: 'vi_VN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Thư mời tiệc cưới Lê Phúc Tường & Nguyễn Ngọc Anh',
+    description: 'Trân trọng kính mời quý khách đến chung vui trong ngày hạnh phúc của Phúc Tường và Ngọc Anh',
+    images: ['/images/wedding-1.jpg'],
+  },
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },

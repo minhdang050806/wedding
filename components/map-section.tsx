@@ -3,8 +3,8 @@
 import { MapPin, Navigation } from 'lucide-react';
 
 const VENUE = {
-  name: 'QC Art Villa',
-  addressLine: '2FQ2+7W, Yên Bài',
+  name: 'QC ART Village',
+  addressLine: 'Số 30 ngõ 22, Đường Quảng Phúc 9 Yên Bài - Hà Nội',
   district: 'Huyện Ba Vì, Hà Nội, Việt Nam',
   mapsLink: 'https://maps.app.goo.gl/3973we9cFsajuSMVA',
   embedSrc:
