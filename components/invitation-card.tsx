@@ -46,7 +46,7 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
           {/* Card header */}
           <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/10 px-4 sm:px-8 py-4 sm:py-5 text-center border-b border-secondary/30">
             <div className="font-luxe text-gold-foil text-[13px] md:text-sm mb-2">
-              Trân trọng kính mời
+              Trân trọng kính mời tham dự
             </div>
             <h2 className="font-script text-shimmer heading-script text-[2rem] sm:text-5xl md:text-6xl mb-1 whitespace-nowrap">
               Lễ Thành Hôn

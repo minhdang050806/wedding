@@ -58,12 +58,12 @@ export function HeroSection() {
         </div>
 
         <p className="font-luxe text-foreground/80 text-[13px] md:text-sm mb-3 md:mb-8">
-          Thư mời dự lễ cưới
+          Thư mời tham dự lễ cưới
         </p>
 
         {/* Names */}
         <h1
-          className="font-script text-shimmer animate-glow tracking-wide mb-1 md:mb-2 uppercase"
+          className="font-script text-shimmer animate-glow tracking-wide mb-1 md:mb-2 uppercase whitespace-nowrap"
           style={{ fontSize: 'clamp(2rem, 9vw, 6rem)' }}
         >
           Lê Phúc Tường
@@ -81,7 +81,7 @@ export function HeroSection() {
         </div>
 
         <h2
-          className="font-script text-shimmer animate-glow tracking-wide mb-4 md:mb-10 uppercase"
+          className="font-script text-shimmer animate-glow tracking-wide mb-4 md:mb-10 uppercase whitespace-nowrap"
           style={{ fontSize: 'clamp(1.8rem, 8.5vw, 6rem)' }}
         >
           Nguyễn Ngọc Anh
