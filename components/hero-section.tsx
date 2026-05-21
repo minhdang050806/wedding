@@ -95,7 +95,7 @@ export function HeroSection() {
         </p>
 
         {/* Wedding date card */}
-        <div className="inline-block mb-5 md:mb-10">
+        <div className="mx-auto w-fit mb-5 md:mb-10">
           <div className="bg-card rounded-2xl px-5 md:px-10 py-3 md:py-5 border border-border shadow-md">
             <p className="font-luxe text-foreground/70 text-[11px] md:text-xs tracking-[0.28em] uppercase mb-1">
               Chủ nhật
@@ -111,7 +111,7 @@ export function HeroSection() {
         </div>
 
         {/* Countdown */}
-        <div className="wing-hover inline-block mb-4 md:mb-10">
+        <div className="wing-hover mx-auto w-fit mb-4 md:mb-10">
           <div className="bg-card rounded-2xl px-4 md:px-8 py-4 md:py-8 border border-border shadow-md">
             <p className="font-luxe text-foreground/75 text-[12px] md:text-xs mb-3 md:mb-6">
               Đếm ngược đến 07 · 06 · 2026
