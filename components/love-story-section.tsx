@@ -72,11 +72,17 @@ export function LoveStorySection() {
             </div>
 
             <div className="pt-3 border-t border-secondary/30 text-center">
-              <div className="grid grid-cols-2 gap-3">
-                <p className="font-script text-shimmer text-2xl md:text-3xl">
+              <div className="grid grid-cols-2 gap-2">
+                <p
+                  className="font-script text-shimmer whitespace-nowrap"
+                  style={{ fontSize: 'clamp(1rem, 4.5vw, 1.875rem)' }}
+                >
                   Phúc Tường
                 </p>
-                <p className="font-script text-shimmer text-2xl md:text-3xl">
+                <p
+                  className="font-script text-shimmer whitespace-nowrap"
+                  style={{ fontSize: 'clamp(1rem, 4.5vw, 1.875rem)' }}
+                >
                   Ngọc Anh
                 </p>
               </div>

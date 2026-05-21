@@ -126,8 +126,10 @@ export function InvitationCard({ guestName }: InvitationCardProps = {}) {
 
                   {/* Message */}
                   <p className="font-serif-elegant text-foreground/80 text-base md:text-[17px] leading-relaxed mb-5 italic">
-                    Trân trọng kính mời {greetingTarget} đến tham dự lễ cưới của Phúc Tường và Ngọc Anh.
-                    Sự có mặt của {trimmed || 'quý vị'} sẽ làm cho ngày đặc biệt này thêm phần ý nghĩa.
+                    Trân trọng kính mời {greetingTarget} đến<br />
+                    tham dự lễ cưới của Phúc Tường và Ngọc Anh.<br />
+                    Sự có mặt của {trimmed || 'quý vị'} sẽ làm cho ngày<br />
+                    đặc biệt này thêm phần ý nghĩa.
                   </p>
 
                   {/* Buttons */}
