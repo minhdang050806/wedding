@@ -64,7 +64,7 @@ export function HeroSection() {
         {/* Names */}
         <h1
           className="font-script text-shimmer animate-glow tracking-wide mb-1 md:mb-2 uppercase whitespace-nowrap"
-          style={{ fontSize: 'clamp(2rem, 9vw, 6rem)' }}
+          style={{ fontSize: 'clamp(1.5rem, 6.5vw, 4.5rem)' }}
         >
           Lê Phúc Tường
         </h1>
@@ -82,17 +82,33 @@ export function HeroSection() {
 
         <h2
           className="font-script text-shimmer animate-glow tracking-wide mb-4 md:mb-10 uppercase whitespace-nowrap"
-          style={{ fontSize: 'clamp(1.8rem, 8.5vw, 6rem)' }}
+          style={{ fontSize: 'clamp(1.35rem, 6vw, 4.5rem)' }}
         >
           Nguyễn Ngọc Anh
         </h2>
 
         {/* Tagline */}
         <p
-          className="font-display text-sm md:text-3xl text-foreground/90 mb-5 md:mb-12 max-w-2xl mx-auto font-light tracking-wide"
+          className="font-display text-sm md:text-3xl text-foreground/90 mb-4 md:mb-8 max-w-2xl mx-auto font-light tracking-wide"
         >
           &ldquo;Cùng nhau viết tiếp câu chuyện yêu thương&rdquo;
         </p>
+
+        {/* Wedding date card */}
+        <div className="inline-block mb-5 md:mb-10">
+          <div className="bg-card rounded-2xl px-5 md:px-10 py-3 md:py-5 border border-border shadow-md">
+            <p className="font-luxe text-foreground/70 text-[11px] md:text-xs tracking-[0.28em] uppercase mb-1">
+              Chủ nhật
+            </p>
+            <div className="flex items-baseline justify-center gap-2 md:gap-3">
+              <span className="font-display text-foreground text-2xl md:text-4xl font-medium tabular-nums">07</span>
+              <span className="text-accent/60 text-lg md:text-2xl">·</span>
+              <span className="font-display text-foreground text-2xl md:text-4xl font-medium tabular-nums">06</span>
+              <span className="text-accent/60 text-lg md:text-2xl">·</span>
+              <span className="font-display text-foreground text-2xl md:text-4xl font-medium tabular-nums">2026</span>
+            </div>
+          </div>
+        </div>
 
         {/* Countdown */}
         <div className="wing-hover inline-block mb-4 md:mb-10">
