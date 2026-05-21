@@ -7,19 +7,19 @@
   /* Elegant Beige & Brown — cream · wood brown · champagne gold
      Source: color.md — Minh Hiếu & Hương Trà palette */
   --background: #FFF8EE;           /* cream — warm, soft, breathable */
-  --foreground: #3A2418;           /* dark chocolate — body text */
+  --foreground: #1E0E06;           /* deep espresso — body text */
   --card: #FFFCF6;                 /* warm off-white */
-  --card-foreground: #3A2418;
+  --card-foreground: #1E0E06;
   --popover: #FFFCF6;
-  --popover-foreground: #3A2418;
+  --popover-foreground: #1E0E06;
   --primary: #8B5E3C;              /* wood brown — primary headings */
   --primary-foreground: #FFF8EE;
   --secondary: #F2E2C8;            /* sand beige — section bg */
   --secondary-foreground: #4A2F1A;
   --muted: #FAF0E0;                /* cream mist */
-  --muted-foreground: #6B3D2E;     /* earthy brown — higher contrast */
+  --muted-foreground: #4A2F1A;     /* dark brown — high contrast */
   --accent: #C9A96E;               /* champagne gold — accent */
-  --accent-foreground: #3A2418;
+  --accent-foreground: #1E0E06;
   --destructive: #A85544;
   --destructive-foreground: #FFFFFF;
   --border: #E8D5B0;               /* soft gold border */
@@ -146,7 +146,7 @@
     font-style: normal;
     letter-spacing: 0.018em;
     font-size: 1rem;
-    line-height: 1.72;
+    line-height: 1.45;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -176,7 +176,7 @@
     font-weight: 500;
     letter-spacing: 0.03em;
     font-style: normal;
-    line-height: 1.6;
+    line-height: 1.38;
   }
 
   /* Luxury labels — EB Garamond uppercase, hỗ trợ tiếng Việt */
@@ -194,14 +194,14 @@
     font-weight: 500;
     letter-spacing: 0.02em;
     font-style: normal;
-    line-height: 1.82;
+    line-height: 1.5;
   }
   .font-body-elegant {
     font-family: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
     font-weight: 500;
     letter-spacing: 0.015em;
     font-style: normal;
-    line-height: 1.78;
+    line-height: 1.5;
   }
 
   /* Heading scale */

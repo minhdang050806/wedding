@@ -47,7 +47,7 @@ export function ConfirmedGuestsTable() {
         <div className="text-center mb-8">
           <p className="font-luxe text-gold-foil text-[13px] mb-3">Khách đã xác nhận</p>
           <h2 className="font-script text-shimmer text-4xl md:text-5xl mb-3">
-            Danh sách xác nhận tham dự
+            Danh sách xác nhận tham dự ngày 07/06
           </h2>
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="h-px w-12 bg-accent/40" />
