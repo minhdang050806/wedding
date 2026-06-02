@@ -12,19 +12,13 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Heart } from 'lucide-react';
-import { PICKUP_LOCATION_LABELS, PICKUP_LOCATION_OPTIONS, TRANSPORT_LABELS, rsvpsApi } from '@/lib/api';
+import { rsvpsApi } from '@/lib/api';
 
 interface RsvpFormProps {
   guestKey?: string;
   guestSalutation?: string;
   guestName?: string;
 }
-
-const TRANSPORT_OPTIONS = [
-  { value: 'self', label: TRANSPORT_LABELS.self },
-  { value: 'family', label: TRANSPORT_LABELS.family },
-  { value: 'other', label: TRANSPORT_LABELS.other },
-];
 
 function getOrCreateSessionKey(baseKey: string): string {
   // Generic forms (not tied to a specific guest) must always get a fresh key per
@@ -63,8 +57,6 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
     numberOfGuests: '1',
     guestType: 'friend',
     transport: 'self',
-    transportOther: '',
-    pickupLocation: '',
     message: '',
   });
 
@@ -80,7 +72,6 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      ...(name === 'transport' && value !== 'family' ? { pickupLocation: '' } : {}),
     }));
   };
 
@@ -107,15 +98,6 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
       setSubmitting(false);
     }
   };
-
-  const transportLabel =
-    formData.transport === 'other'
-      ? formData.transportOther.trim()
-        ? `Khác · ${formData.transportOther.trim()}`
-        : 'Khác'
-      : formData.transport === 'family' && formData.pickupLocation
-      ? `${TRANSPORT_LABELS.family} · ${PICKUP_LOCATION_LABELS[formData.pickupLocation] ?? formData.pickupLocation}`
-      : TRANSPORT_LABELS[formData.transport] ?? '';
 
   if (submitted) {
     return (
@@ -248,79 +230,6 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
 
             <div>
               <label className="block font-luxe text-[11px] text-gold-foil mb-2">
-                Khách đến địa điểm như thế nào? <span className="text-primary">*</span>
-              </label>
-              <div className="space-y-2">
-                {TRANSPORT_OPTIONS.map((opt) => (
-                  <label
-                    key={opt.value}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all
-                                ${
-                                  formData.transport === opt.value
-                                    ? 'border-primary bg-primary/5 ring-2 ring-primary/15'
-                                    : 'border-border hover:border-primary/40 hover:bg-muted'
-                                }`}
-                  >
-                    <input
-                      type="radio"
-                      name="transport"
-                      value={opt.value}
-                      checked={formData.transport === opt.value}
-                      onChange={handleChange}
-                      className="w-4 h-4 accent-primary"
-                    />
-                    <span className="text-foreground font-serif-elegant">{opt.label}</span>
-                  </label>
-                ))}
-              </div>
-              {formData.transport === 'other' && (
-                <div className="mt-3 animate-fade-in">
-                  <Input
-                    type="text"
-                    name="transportOther"
-                    value={formData.transportOther}
-                    onChange={handleChange}
-                    placeholder="Vui lòng mô tả phương tiện hoặc cách di chuyển…"
-                    required
-                    className="rounded-lg border-border focus:border-primary focus:ring-primary/20"
-                  />
-                </div>
-              )}
-              {formData.transport === 'family' && (
-                <div className="mt-4 animate-fade-in">
-                  <p className="font-luxe text-[11px] text-gold-foil mb-2">
-                    Điểm đón <span className="text-primary">*</span>
-                  </p>
-                  <div className="space-y-2">
-                    {PICKUP_LOCATION_OPTIONS.map((opt) => (
-                      <label
-                        key={opt.value}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-all
-                                    ${
-                                      formData.pickupLocation === opt.value
-                                        ? 'border-primary bg-primary/5 ring-2 ring-primary/15'
-                                        : 'border-border hover:border-primary/40 hover:bg-muted'
-                                    }`}
-                      >
-                        <input
-                          type="radio"
-                          name="pickupLocation"
-                          value={opt.value}
-                          checked={formData.pickupLocation === opt.value}
-                          onChange={handleChange}
-                          className="w-4 h-4 accent-primary"
-                          required={formData.transport === 'family'}
-                        />
-                        <span className="text-foreground font-serif-elegant">{opt.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <label className="block font-luxe text-[11px] text-gold-foil mb-2">
                 Lời nhắn thêm (tùy chọn)
               </label>
               <Textarea
@@ -409,15 +318,6 @@ export function RsvpForm({ guestKey, guestSalutation, guestName }: RsvpFormProps
                 <span className="font-semibold">Số người:</span>{' '}
                 {formData.numberOfGuests}
               </p>
-              <p>
-                <span className="font-semibold">Di chuyển:</span> {transportLabel}
-              </p>
-              {formData.transport === 'family' && formData.pickupLocation && (
-                <p>
-                  <span className="font-semibold">Điểm đón:</span>{' '}
-                  {PICKUP_LOCATION_LABELS[formData.pickupLocation] ?? formData.pickupLocation}
-                </p>
-              )}
             </div>
             <p className="mt-3">Thông tin này có chính xác không?</p>
             <div className="mt-4 border-t border-border pt-4">
